@@ -1,7 +1,7 @@
 const sidebar = {
   cookbook: [
     {
-      title: 'Recetario',
+      title: 'Libro de Recetas',
       collapsable: false,
       children: ['/cookbook/', '/cookbook/editable-svg-icons']
     }
