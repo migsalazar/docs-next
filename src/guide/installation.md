@@ -42,7 +42,7 @@ $ npm install vue@next
 Vue provee una [interfaz de línea de comandos (CLI) oficial](https://github.com/vuejs/vue-cli) para realizar la creación rápida de la estructura base para las Single Page Applications. Esta provee _setups_ con baterías incluidas para un flujo de trabajo de frontend moderno. Solo toma unos minutos configurar y ejecutarlo con _hot-reload_, _lint-on-save_, y compilaciones listas para producción. Véase [the Vue CLI docs](https://cli.vuejs.org) para más detalles.
 
 ::: tip
-La interfaz de línea de comandos (CLI) asume que usted posee conocimiento previo de Node.js y las herramientas de compilación asociadas. Si usted es nuevo en Vue o en el manejo de las herramientas de compilación de front-end, le recomendamos leer <a href="./">la guía</a> sin ninguna herramienta de compilación antes de usar la interfaz de línea de comandos.
+La interfaz de línea de comandos (CLI) asume que usted posee conocimiento previo de Node.js y las herramientas de compilación asociadas. Si usted es nuevo en Vue o en el manejo de las herramientas de compilación de _front-end_, le recomendamos leer <a href="./">la guía</a> sin ninguna herramienta de compilación antes de usar la interfaz de línea de comandos.
 :::
 
 Para Vue 3, usted debería utilizar Vue CLI v4.5 disponible en `npm` bajo el nombre de `@vue/cli`. Para actualizar, ustd necesita reinstalar la última versión de `@vue/cli` globalmente:
