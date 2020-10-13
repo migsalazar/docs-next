@@ -28,7 +28,7 @@
         >
       </form>
       <p>
-        Usted puede leer los problemas previos y escuchar nuestro podcast en <a href="https://news.vuejs.org" target="_blank" rel="noopener">news.vuejs.org</a>.
+        Usted puede leer los números anteriores y escuchar nuestro podcast en <a href="https://news.vuejs.org" target="_blank" rel="noopener">news.vuejs.org</a>.
       </p>
     </div>
   </div>
