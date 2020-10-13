@@ -41,7 +41,7 @@ const sidebar = {
       ]
     },
     {
-      title: 'Transiciones y Animación',
+      title: 'Transiciones & Animaciones',
       collapsable: false,
       children: [
         '/guide/transitions-overview',
