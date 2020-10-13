@@ -98,7 +98,7 @@ const sidebar = {
       ]
     },
     {
-      title: 'Escalando su Aplicación',
+      title: 'Escalando la Aplicación',
       collapsable: false,
       children: ['/guide/routing', '/guide/state-management', '/guide/ssr']
     },
