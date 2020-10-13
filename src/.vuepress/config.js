@@ -285,7 +285,7 @@ module.exports = {
             link: '/style-guide/'
           },
           {
-            text: 'Recetario',
+            text: 'Libro de Recetas',
             link: '/cookbook/'
           },
           {
