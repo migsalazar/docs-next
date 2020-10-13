@@ -51,7 +51,7 @@ const sidebar = {
       ]
     },
     {
-      title: 'Reusabilidad y Composición',
+      title: 'Reusabilidad & Composición',
       collapsable: false,
       children: [
         '/guide/mixins',
