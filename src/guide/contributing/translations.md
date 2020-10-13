@@ -1,6 +1,6 @@
 # Traducciones
 
-Vue se ha expandido, con el equipo del núcleo estando en, al menos, mitad de una docena de zonas de tiempo diferentes. [El foro](https://forum.vuejs.org/) incluye 7 lenguajes y en expansión y muchos de nuestros documentos poseen [traducciones mantenidas activamente](https://github.com/vuejs?utf8=%E2%9C%93&q=vuejs.org). Estamos muy orgullosos de que Vue se expandió internacionalmente, pero podemos hacerlo mejor.
+Vue ya se ha extendido por todo el mundo, incluso con el equipo central en al menos media docena de zonas horarias. [El foro](https://forum.vuejs.org/) incluye 7 lenguajes y contando y muchos de nuestros documentos tienen [traducciones mantenidas activamente](https://github.com/vuejs?utf8=%E2%9C%93&q=vuejs.org). Estamos muy orgullosos del alcance internacional de Vue, pero podemos hacerlo aún mejor.
 
 ## ¿Podemos empezar a traducir los documentos de Vue 3?
 
