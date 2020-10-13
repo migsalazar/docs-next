@@ -22,9 +22,9 @@ features:
     details: Un ecosistema que se puede adoptar de forma incremental y que se puede escalar entre una librería y un framework con todas las funciones.
   - title: Performante
     details: |
-      Entorno de 20KB min+gzip<br>
-      DOM Virtual Intensamente Rápido<br>
-      Esfuerzos Mínimos de Optimización
+      20KB min+gzip Runtime<br>
+	  Virtual DOM Increíblemente Rápido<br>
+	  Esfuerzos mínimos de optimización
 footer: |
   Liberado bajo la <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">Licencia MIT</a><br>
   Copyright © 2014-2020 Evan You
