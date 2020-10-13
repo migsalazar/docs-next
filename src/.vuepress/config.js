@@ -26,7 +26,7 @@ const sidebar = {
       ]
     },
     {
-      title: 'Componentes en Detalle',
+      title: 'Componentes en Profundidad',
       collapsable: false,
       children: [
         '/guide/component-registration',
