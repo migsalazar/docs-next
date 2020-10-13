@@ -61,7 +61,7 @@ Lo siguiente constituye una lista de los cambios que afectan a los desarrollos r
 ### API Global
 
 - [La API Global de Vue fue cambiada para utilizar la instancia de una aplicación](/guide/migration/global-api.html)
-- [Las APIs globales e internas han sido reestructuradas para cumplir con "eliminación de código muerto"](/guide/migration/global-api-treeshaking.html)
+- [Las APIs globales e internas han sido reestructuradas para que sea "tree-shakable"](/guide/migration/global-api-treeshaking.html)
 
 ### Directivas de Plantillas
 

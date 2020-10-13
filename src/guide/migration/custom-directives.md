@@ -97,7 +97,7 @@ En Vue 3, ahora soportamos fragmentos, que nos permite retornar más de un nodo 
 
 Tan maravillosamente flexible como es esto, podemos encontrar un problema potencial con una directiva modificada que pueda tener múltiples nodos raíz.
 
-Como resultado, las directivas modificadas ahora son incluidas como parte de los datos de un nodo de DOM virtual. Cuando una directiva modificada es utilizada en un componente, los _hooks_ son pasados al componente como propiedades extrañas y terminan en `this.$attrs`.
+Como resultado, las directivas modificadas ahora son incluidas como parte de los datos de un nodo de DOM virtual. Cuando una directiva modificada es utilizada en un componente, los _hooks_ son pasados al componente como propiedades irrelevantes y terminan en `this.$attrs`.
 
 Esto también significa que es posible enganchar directamente en el ciclo de vida de un elemento así como en la plantilla, lo que puede ser práctico cuando una directiva modificada está muy involucrada:
 

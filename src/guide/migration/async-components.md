@@ -7,11 +7,11 @@ badges:
 
 ## Vistazo General
 
-A continuación un vistazo general de alto nivel a los cambios hechos:
+A continuación se pueden observar a un alto nivel los cambios hechos:
 
 - Nuevo método de ayuda `defineAsyncComponent` que define explícitamente a los componentes asíncronos
 - Opción `component` renombrada a `loader`
-- La función cargador no recibe inherentemente los argumentos `resolve` y `reject` y debe retornar una Promesa
+- La función _loader_ no recibe inherentemente los argumentos `resolve` y `reject` y debe retornar una Promesa
 
 Para una explicación más detallada, ¡siga leyendo!
 
@@ -57,7 +57,7 @@ const asyncPageWithOptions = defineAsyncComponent({
 })
 ```
 
-Otro cambio que se ha hecho de la versión 2.x es que la opción `component` ahora fue renombrada a `loader` para comunicar con precisión que la definición de un componente no puede ser proporcionada directamente.
+Otro cambio que se ha hecho con respecto a la versión 2.x es que la opción `component` ahora fue renombrada a `loader` para comunicar con precisión que la definición de un componente no puede ser proporcionada directamente.
 
 ```js{4}
 import { defineAsyncComponent } from 'vue'
@@ -71,7 +71,7 @@ const asyncPageWithOptions = defineAsyncComponent({
 })
 ```
 
-Además, a diferencia de la versión 2.x, la función cargador ya no recibe los argumentos `resolve` ni `reject` y siempre debe retornar una Promesa.
+Además, a diferencia de la versión 2.x, la función _loader_ ya no recibe los argumentos `resolve` ni `reject` y siempre debe retornar una Promesa.
 
 ```js
 // 2.x version

@@ -77,7 +77,7 @@ const vm = app.mount('#app')
 console.log(vm.count) // => 4
 ```
 
-Existen otras opciones de componente que añaden propiedades definidas por el usuario a la instancia del componente, tal como `methods`, `props`, `computed`, `inject` y `setup`. Discutiremos cada una de esas en detalle más adelante en esta guía. Todas las propiedades de la instnacia del componente, sin importar cómo son definidas, serán accesibles en la plantilla del componente.
+Existen otras opciones de componente que añaden propiedades definidas por el usuario a la instancia del componente, tal como `methods`, `props`, `computed`, `inject` y `setup`. Discutiremos cada una de esas en detalle más adelante en esta guía. Todas las propiedades de la instancia del componente, sin importar cómo son definidas, serán accesibles en la plantilla del componente.
 
 Vue también expone algunas propiedades integradas a través de la instancia del componente, tal como `$attrs` y `$emit`. Estas propiedades tienen un prefijo `$` para evitar conflictos con nombres de propiedades definidas por el usuario.
 

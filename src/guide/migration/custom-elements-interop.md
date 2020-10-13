@@ -13,7 +13,7 @@ badges:
 
 ## Elementos Autónomos Personalizados
 
-Si quisiéramos añadir un elemento personalizado definido fuera de Vue (p. ej. utilizando la API de Componentes Web), necesitamos 'instruir' a Vue para tratarlo como un elemento personalizado. Vamos a utilizar la siguiente plantilla como un ejemplo.
+Si quisiéramos añadir un elemento personalizado definido fuera de Vue (por ejemplo utilizando la API de Componentes Web), necesitamos 'instruir' a Vue para tratarlo como un elemento personalizado. Vamos a utilizar la siguiente plantilla como un ejemplo.
 
 ```html
 <plastic-button></plastic-button>
@@ -25,7 +25,7 @@ En Vue 2.x, la lista de etiquetas permitidas como elementos personalizados era r
 
 ```js
 // Esto hará que Vue ignore el elemento personalizado definido fuera de Vue
-// (p. ej., utilizando las APIs de Componentes Web)
+// (por ejemplo, utilizando las APIs de Componentes Web)
 
 Vue.config.ignoredElements = ['plastic-button']
 ```
@@ -34,7 +34,7 @@ Vue.config.ignoredElements = ['plastic-button']
 
 **En Vue 3.0, esta verificación es realizada durante la compilación de la plantilla.** Para instruir al compilador para tratar `<plastic-button>` como un elemento personalizado:
 
-- Si se está utilizando un paso de compilación: pase la opción `isCustomElement` al compilación de plantillas de Vue. Si está utilizando `vue-loader`, este debería ser pasado a través de la opción `compilerOptions` de `vue-loader`:
+- Si se está utilizando un paso de compilación: pase la opción `isCustomElement` al compilador de plantillas de Vue. Si está utilizando `vue-loader`, este debería ser pasado a través de la opción `compilerOptions` de `vue-loader`:
 
   ```js
   // en la configuración de webpack
@@ -136,6 +136,6 @@ Las funciones `v-is` al igual que una vinculación dinámica de `:is` en la vers
 
 ## Estrategia de Migración
 
-- Reemplace `config.ignoredElements` con alguno, `compilerOptions` de `vue-loader` (con el paso de compilación) o con `app.config.isCustomElement` (con la compilación de plantillas sobre-la-marcha)
+- Reemplace `config.ignoredElements` con `compilerOptions` de `vue-loader` (con el paso de compilación) o con `app.config.isCustomElement` (con la compilación de plantillas sobre-la-marcha)
 
 - Cambie todas las etiquetas que no sean `<component>` con el uso de `is` a `<component is="...">` (para plantillas SFC) o `v-is` (para plantillas declaradas dentro del DOM).

@@ -33,7 +33,7 @@ Estos lenguajes específicos son únicamente ejemplos. Puede utilizar fácilment
 
 Una cosa importante a notar es que **la separación de responsabilidades no es igual a la separación de tipos de archivo.** En el desarrollo de interfaces de usuario modernas, hemos encontrado que en vez de dividir el código base en tres grandes capas que se entrelazan una con otra, tiene mucho más sentido dividirlas en componentes con bajo acoplamiento y componer los mismos. Dentro de un componente, su plantilla, lógica y estilos están acoplados inherentemente, y colocándolos de hecho hace al componente más cohesivo y mantenible.
 
-Incluso si no le gusta la idea de Componentes de un Solo Archivo, todavía puede aprovechar sus características de recarga en caliente y precompilación separando su JavaScript y CSS en archivos separados:
+Incluso si no le gusta la idea de Componentes de un Solo Archivo, todavía puede aprovechar sus características de _hot-reloading_ y precompilación separando su JavaScript y CSS en archivos separados:
 
 ``` html
 <!-- my-component.vue -->
@@ -48,7 +48,7 @@ Incluso si no le gusta la idea de Componentes de un Solo Archivo, todavía puede
 
 ### Ejemplo en Sandbox
 
-Si quiere adentrarse y empezar jugando con componentes de un solo archivo, vea [esta aplicación simple todo](https://codesandbox.io/s/vue-todo-list-app-with-single-file-component-vzkl3?file=/src/App.vue) en CodeSandbox.
+Si quiere adentrarse y empezar a jugar con componentes de un solo archivo, vea [esta aplicación simple todo](https://codesandbox.io/s/vue-todo-list-app-with-single-file-component-vzkl3?file=/src/App.vue) en CodeSandbox.
 
 ### Para Usuarios Nuevos en Sistemas de Compilación de Módulos en JavaScript
 
@@ -56,9 +56,9 @@ Con componentes `.vue`, estamos entrando al reino de aplicaciones avanzadas de J
 
 - **Manejador de Paquetes de Node (NPM)**: Lea la sección de [la Guía de Inicio](https://docs.npmjs.com/packages-and-modules/getting-packages-from-the-registry) sobre cómo obtener paquetes del registro.
 
-- **JavaScript Moderno con ES2015/16**: Lea parte a parte la [Guía de Aprendizaje de ES2015](https://babeljs.io/docs/en/learn) de Babel. No tiene que memorizar cada característica ahora mismo, pero tenga esta página como referencia a la que puede volver.
+- **JavaScript Moderno con ES2015/16**: Lea atentamente la [Guía de Aprendizaje de ES2015](https://babeljs.io/docs/en/learn) de Babel. No tiene que memorizar cada característica ahora mismo, pero tenga esta página como referencia a la que puede volver.
 
-Despúes de que ha tomado un día para adentrarse en estos recursos, recomendamos ver [Vue CLI](https://cli.vuejs.org/). ¡Siga las instrucciones y debería tener un proyecto Vue con componentes `.vue`, ES2015, webpack y recarga en caliente al instante!
+Despúes de que ha tomado un día para adentrarse en estos recursos, recomendamos ver [Vue CLI](https://cli.vuejs.org/). ¡Siga las instrucciones y debería tener un proyecto Vue con componentes `.vue`, ES2015, webpack y _hot-reloading_ al instante!
 
 ### Para Usuarios Avanzados
 

@@ -50,7 +50,7 @@ const Counter = {
 Vue.createApp(Counter).mount('#counter')
 ```
 
-¡Hemos creado nuestra primera aplicación Vue! Esto luce muy similar a renderizar una plantilla que contiene cadenas de caracteres, pero Vue ha hecho mucho trabajo detrás de escenas. Los datos y el DOM ahora están vinculados, y todo es **reactivo**. ¿Cómo lo sabemos? Vea el ejemplo siguiente donde la propiedad `counter` incrementa cada segundo y verá como cambia el DOM renderizado:
+¡Hemos creado nuestra primera aplicación Vue! Esto luce muy similar a renderizar una plantilla que contiene cadenas de caracteres, pero Vue ha hecho mucho trabajo detrás de escenas. Los datos y el DOM ahora están vinculados, y todo es **reactivo**. ¿Cómo lo sabemos? Vea el siguiente ejemplo donde la propiedad `counter` incrementa cada segundo y verá como cambia el DOM renderizado:
 
 ```js{8-10}
 const CounterApp = {
@@ -138,7 +138,7 @@ Vue.createApp(EventHandling).mount('#event-handling')
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-Note que en este método actualizamos el estado de nuestra aplicación son tocar el DOM, todas las manipulaciones del DOM son manejadas por Vue, y el código que usted escribe está enfocado en la lógica que hay debajo.
+Note que en este método actualizamos el estado de nuestra aplicación sin tocar el DOM, todas las manipulaciones del DOM son manejadas por Vue, y el código que usted escribe está enfocado en la lógica que hay debajo.
 
 Vue también provee la directiva `v-model` que hace muy sencilla la vinculación de doble dirección entre el formulario de entrada y el estado de la aplicación:
 
