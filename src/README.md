@@ -17,7 +17,7 @@ actionButtons:
     target: _blank
 features:
   - title: Accesible
-    details: ¿Ya sabe HTML, CSS y JavaScript? ¡Lea la guía y empiece a construir cosas ahora mismo!
+    details: ¿Ya conoce HTML, CSS y JavaScript? ¡Lea la guía y comience a construir cosas en poco tiempo!
   - title: Versátil
     details: Un ecosistema adoptable incrementalmente que escala entre una librería y un framework con todas las características.
   - title: Eficiente
