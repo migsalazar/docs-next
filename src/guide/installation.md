@@ -45,7 +45,7 @@ Vue provee una [interfaz de línea de comandos (CLI) oficial](https://github.com
 La interfaz de línea de comandos (CLI) asume que usted posee conocimiento previo de Node.js y las herramientas de compilación asociadas. Si usted es nuevo en Vue o en el manejo de las herramientas de compilación de _front-end_, le recomendamos leer <a href="./">la guía</a> sin ninguna herramienta de compilación antes de usar la interfaz de línea de comandos.
 :::
 
-Para Vue 3, usted debería utilizar Vue CLI v4.5 disponible en `npm` bajo el nombre de `@vue/cli`. Para actualizar, ustd necesita reinstalar la última versión de `@vue/cli` globalmente:
+Para Vue 3, usted debería utilizar Vue CLI v4.5 disponible en `npm` bajo el nombre de `@vue/cli`. Para actualizar, usted necesita reinstalar la última versión de `@vue/cli` globalmente:
 
 ```bash
 yarn global add @vue/cli
