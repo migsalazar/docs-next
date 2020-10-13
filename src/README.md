@@ -20,7 +20,7 @@ features:
     details: ¿Ya conoce HTML, CSS y JavaScript? ¡Lea la guía y comience a construir cosas en poco tiempo!
   - title: Versátil
     details: Un ecosistema que se puede adoptar de forma incremental y que se puede escalar entre una librería y un framework con todas las funciones.
-  - title: Eficiente
+  - title: Performante
     details: |
       Entorno de 20KB min+gzip<br>
       DOM Virtual Intensamente Rápido<br>
