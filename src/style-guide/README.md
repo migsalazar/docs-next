@@ -2,46 +2,46 @@
 sidebar: auto
 ---
 
-# Style Guide
+# Guía de Estilo
 
-This is the official style guide for Vue-specific code. If you use Vue in a project, it's a great reference to avoid errors, bikeshedding, and anti-patterns. However, we don't believe that any style guide is ideal for all teams or projects, so mindful deviations are encouraged based on past experience, the surrounding tech stack, and personal values.
+Esta es la guía de estilo oficial para el código específico de Vue. Si usa Vue en un proyecto, es una excelente referencia para evitar errores, "_bikeshedding_" y antipatrones. Sin embargo, no creemos que ninguna guía de estilo sea ideal para todos los equipos o proyectos, por lo que las desviaciones conscientes se fomentan en función de la experiencia pasada, la tecnología acumulada y los valores personales.
 
-For the most part, we also avoid suggestions about JavaScript or HTML in general. We don't mind whether you use semicolons or trailing commas. We don't mind whether your HTML uses single-quotes or double-quotes for attribute values. Some exceptions will exist however, where we've found that a particular pattern is helpful in the context of Vue.
+También evitamos las sugerencias sobre JavaScript o HTML en general. No nos importa si usa punto y coma o comas finales. No nos importa si su HTML utiliza comillas simples o comillas dobles para los valores de los atributos. Sin embargo, algunas excepciones existirán cuando descubramos que un patrón particular es útil en el contexto de Vue.
 
-Finally, we've split rules into four categories:
+Finalmente, hemos dividido las reglas en cuatro categorías:
 
-## Rule Categories
+## Categorías
 
-### Priority A: Essential
+### Prioridad A: Esencial
 
-These rules help prevent errors, so learn and abide by them at all costs. Exceptions may exist, but should be very rare and only be made by those with expert knowledge of both JavaScript and Vue.
+Estas reglas ayudan a prevenir errores, así que apréndalas y cumpla con ellas a toda costa. Pueden existir excepciones, pero deben ser muy raras y sólo las deben realizar aquellas personas con conocimientos de JavaScript y Vue.
 
-### Priority B: Strongly Recommended
+### Prioridad B: Muy recomendable
 
-These rules have been found to improve readability and/or developer experience in most projects. Your code will still run if you violate them, but violations should be rare and well-justified.
+Se ha descubierto que estas reglas mejoran la legibilidad y/o la experiencia del desarrollador en la mayoría de los proyectos. Su código aún se ejecutará si no las respeta, pero estas excepciones deben ser raras y estar bien justificadas.
 
-### Priority C: Recommended
+### Prioridad C: Recomendadas
 
-Where multiple, equally good options exist, an arbitrary choice can be made to ensure consistency. In these rules, we describe each acceptable option and suggest a default choice. That means you can feel free to make a different choice in your own codebase, as long as you're consistent and have a good reason. Please do have a good reason though! By adapting to the community standard, you will:
+Donde existen opciones múltiples e igualmente buenas, se puede hacer una elección arbitraria para garantizar la coherencia. En estas reglas, describimos cada opción aceptable y sugerimos una opción predeterminada. Eso significa que puede sentirse libre de hacer una elección diferente en su propia base de código, siempre que sea coherente y tenga una buena razón para ello. Por favor, justifique su elección! Al adaptarse al estándar de la comunidad, usted:
 
-1. train your brain to more easily parse most of the community code you encounter
-2. be able to copy and paste most community code examples without modification
-3. often find new hires are already accustomed to your preferred coding style, at least in regards to Vue
+1. Entrena su cerebro para analizar más fácilmente la mayoría del código de comunidad que encuentre
+2. Será capaz de copiar y pegar la mayoría de los ejemplos de código de comunidad sin modificación
+3. A menudo descubrirá que las nuevas convenciones ya están amoldadas a su estilo de codificación preferido, al menos en lo que respecta a Vue
 
-### Priority D: Use with Caution
+### Prioridad D: Usar con Precaución
 
-Some features of Vue exist to accommodate rare edge cases or smoother migrations from a legacy code base. When overused however, they can make your code more difficult to maintain or even become a source of bugs. These rules shine a light on potentially risky features, describing when and why they should be avoided.
+Algunas características de Vue existen para adaptarse a casos excepcionales o migraciones menos "agresivas" desde una base de código heredada. Sin embargo, cuando se usan en exceso, pueden hacer que su código sea más difícil de mantener o incluso convertirse en una fuente de errores. Estas reglas arrojan luz sobre las características potencialmente riesgosas, y describen cuándo y por qué deberían evitarse.
 
-## Priority A Rules: Essential <span class="hide-from-sidebar">(Error Prevention)</span>
+## Reglas de prioridad A: Esencial <span class="hide-from-sidebar">(Prevención de Errores)</span>
 
-### Multi-word component names <sup data-p="a">essential</sup>
+### Nombres de componentes de varias palabras <sup data-p="a">esencial</sup>
 
-**Component names should always be multi-word, except for root `App` components, and built-in components provided by Vue, such as `<transition>` or `<component>`.**
+**Los nombres de los componentes siempre deben ser de varias palabras, a excepción de los componentes raíz `App`, componentes provistos por Vue, tales como `<transition>` o `<component>`**.
 
-This [prevents conflicts](http://w3c.github.io/webcomponents/spec/custom/#valid-custom-element-name) with existing and future HTML elements, since all HTML elements are a single word.
+Esto [evita conflictos](http://w3c.github.io/webcomponents/spec/custom/#valid-custom-element-name) con elementos HTML existentes y futuros, ya que todos los elementos HTML son una sola palabra.
 
 <div class="style-example style-example-bad">
-<h4>Bad</h4>
+<h4>Incorrecto</h4>
 
 ``` js
 app.component('todo', {
@@ -58,7 +58,7 @@ export default {
 </div>
 
 <div class="style-example style-example-good">
-<h4>Good</h4>
+<h4>Correcto</h4>
 
 ``` js
 app.component('todo-item', {
@@ -74,30 +74,30 @@ export default {
 ```
 </div>
 
-### Prop definitions <sup data-p="a">essential</sup>
+### Definiciones de Props <sup data-p="a">esencial</sup>
 
-**Prop definitions should be as detailed as possible.**
+**Las definiciones de Props deben ser lo mas detalladas posible.**
 
-In committed code, prop definitions should always be as detailed as possible, specifying at least type(s).
+En el código "commiteado", las definiciones de props siempre deben ser lo más detalladas posible, especificando al menos su(s) tipo(s).
 
-::: details Detailed Explanation
-Detailed [prop definitions](https://vuejs.org/v2/guide/components.html#Prop-Validation) have two advantages:
+::: details Explicación Detallada
+Las [definiciones detalladas de props](https://vuejs.org/v2/guide/components.html#Prop-Validation) tienen dos ventajas:
 
-- They document the API of the component, so that it's easy to see how the component is meant to be used.
-- In development, Vue will warn you if a component is ever provided incorrectly formatted props, helping you catch potential sources of error.
+- Documentan la API del componente, de modo que es fácil ver cómo se debe usar el componente.
+- En desarrollo, Vue le advertirá si algún componente se proporciona con props formateados incorrectamente, ayudándole a detectar posibles fuentes de error.
 :::
 
 <div class="style-example style-example-bad">
-<h4>Bad</h4>
+<h4>Incorrecto</h4>
 
 ``` js
-// This is only OK when prototyping
+// Esto esta bien solo cuando se prototipa
 props: ['status']
 ```
 </div>
 
 <div class="style-example style-example-good">
-<h4>Good</h4>
+<h4>Correcto</h4>
 
 ``` js
 props: {
@@ -106,7 +106,7 @@ props: {
 ```
 
 ``` js
-// Even better!
+// ¡Aún mejor!
 props: {
   status: {
     type: String,
@@ -125,14 +125,15 @@ props: {
 ```
 </div>
 
-### Keyed `v-for` <sup data-p="a">essential</sup>
+### Key + `v-for` <sup data-p="a">esencial</sup>
 
-**Always use `key` with `v-for`.**
+**Siempre use `key` con `v-for`.**
 
-`key` with `v-for` is _always_ required on components, in order to maintain internal component state down the subtree. Even for elements though, it's a good practice to maintain predictable behavior, such as [object constancy](https://bost.ocks.org/mike/constancy/) in animations.
+`key` con `v-for` es un requisito obligatorio en componentes, para mantener el estado del componente interno en el subárbol. Sin embargo, incluso para los elementos, es una buena práctica mantener un comportamiento predecible, como [constancia del objeto](https://bost.ocks.org/mike/constancy/) en las animaciones.
 
-::: details Detailed Explanation
-Let's say you have a list of todos:
+
+::: details Explicación Detallada
+Digamos que tiene una lista de "ToDos":
 
 ``` js
 data() {
@@ -151,15 +152,15 @@ data() {
 }
 ```
 
-Then you sort them alphabetically. When updating the DOM, Vue will optimize rendering to perform the cheapest DOM mutations possible. That might mean deleting the first todo element, then adding it again at the end of the list.
+Luego los ordena alfabéticamente. Al actualizar el DOM, Vue optimizará la representación para realizar las mutaciones de DOM más efectivas en lo posible. Eso podría significar eliminar el primer elemento del "ToDo" y luego agregarlo nuevamente al final de la lista.
 
-The problem is, there are cases where it's important not to delete elements that will remain in the DOM. For example, you may want to use `<transition-group>` to animate list sorting, or maintain focus if the rendered element is an `<input>`. In these cases, adding a unique key for each item (e.g. `:key="todo.id"`) will tell Vue how to behave more predictably.
+El problema es que hay casos en los que es importante no eliminar elementos que permanecerán en el DOM. Por ejemplo, puede usar `<transition-group>` para animar el orden de las listas, o mantener el foco si el elemento renderizado es `<input>`. En estos casos, agregar una clave única para cada elemento (por ejemplo, `:key="todo.id"`) le indicará a Vue cómo comportarse de manera más predecible.
 
-In our experience, it's better to _always_ add a unique key, so that you and your team simply never have to worry about these edge cases. Then in the rare, performance-critical scenarios where object constancy isn't necessary, you can make a conscious exception.
+En nuestra experiencia, es mejor agregar _siempre_ una clave única, para que usted y su equipo simplemente nunca tengan que preocuparse por estos casos extremos. Luego, en los raros escenarios de rendimiento crítico donde la constancia del objeto no es necesaria, puede hacer una excepción consciente.
 :::
 
 <div class="style-example style-example-bad">
-<h4>Bad</h4>
+<h4>Incorrecto</h4>
 
 ``` html
 <ul>
@@ -171,7 +172,7 @@ In our experience, it's better to _always_ add a unique key, so that you and you
 </div>
 
 <div class="style-example style-example-good">
-<h4>Good</h4>
+<h4>Correcto</h4>
 
 ``` html
 <ul>
@@ -185,18 +186,18 @@ In our experience, it's better to _always_ add a unique key, so that you and you
 ```
 </div>
 
-### Avoid `v-if` with `v-for` <sup data-p="a">essential</sup>
+### Evitar `v-if` con `v-for` <sup data-p="a">essential</sup>
 
-**Never use `v-if` on the same element as `v-for`.**
+**Nunca use `v-if` en el mismo elemento que `v-for`.**
 
-There are two common cases where this can be tempting:
+Hay dos casos comunes en los que esto puede ser tentador:
 
-- To filter items in a list (e.g. `v-for="user in users" v-if="user.isActive"`). In these cases, replace `users` with a new computed property that returns your filtered list (e.g. `activeUsers`).
+- Para filtrar elementos en una lista (por ejemplo, `v-for="user in users" v-if="user.isActive"`). En estos casos, reemplace `users` con una nueva propiedad calculada que devuelva su lista filtrada (por ejemplo `activeUsers`).
 
-- To avoid rendering a list if it should be hidden (e.g. `v-for="user in users" v-if="shouldShowUsers"`). In these cases, move the `v-if` to a container element (e.g. `ul`, `ol`).
+- Para evitar renderizar una lista si debe estar oculta (por ejemplo, `v-for="user in users" v-if="shouldShowUsers"`). En estos casos, mueva el `v-if` a un elemento contenedor (por ejemplo,`ul`, `ol`).
 
-::: details Detailed Explanation
-When Vue processes directives, `v-if` has a higher priority than `v-for`, so that this template:
+::: details Explicación Detallada
+Cuando Vue procesa directivas, `v-for` tiene mayor prioridad que `v-if`, entonces esta plantilla:
 
 ``` html
 <ul>
@@ -210,9 +211,9 @@ When Vue processes directives, `v-if` has a higher priority than `v-for`, so tha
 </ul>
 ```
 
-Will throw an error, because the `v-if` directive will be evaluated first and the iteration variable `user` does not exist at this moment.
+Lanzará un error porque la directiva `v-if` es evaluada primero, y la variable `user` de la iteración no existirá en dicho momento.
 
-This could be fixed by iterating over a computed property instead, like this:
+Esto puede ser resuelto iterando sobre una propiedad computada, de esta manera:
 
 ``` js
 computed: {
@@ -233,7 +234,7 @@ computed: {
 </ul>
 ```
 
-Alternatively, we can use a `<template>` tag with `v-for` to wrap the `<li>` element:
+Alternativamente, podemos utilizar una etiqueta `<template>` con `v-for` para envolver el elemento `<li>`:
 
 ```html
 <ul>
@@ -248,7 +249,7 @@ Alternatively, we can use a `<template>` tag with `v-for` to wrap the `<li>` ele
 :::
 
 <div class="style-example style-example-bad">
-<h4>Bad</h4>
+<h4>Incorrecto</h4>
 
 ``` html
 <ul>
@@ -264,7 +265,7 @@ Alternatively, we can use a `<template>` tag with `v-for` to wrap the `<li>` ele
 </div>
 
 <div class="style-example style-example-good">
-<h4>Good</h4>
+<h4>Correcto</h4>
 
 ``` html
 <ul>
@@ -288,24 +289,24 @@ Alternatively, we can use a `<template>` tag with `v-for` to wrap the `<li>` ele
 ```
 </div>
 
-### Component style scoping <sup data-p="a">essential</sup>
+### Scoping de Estilos de Componentes <sup data-p="a">esencial</sup>
 
-**For applications, styles in a top-level `App` component and in layout components may be global, but all other components should always be scoped.**
+**Para las aplicaciones, los estilos, en un componente `App` de nivel superior y en los componentes de "layout" pueden ser globales, pero todos los demás componentes siempre deben ser _scoped_**
 
-This is only relevant for [single-file components](../guide/single-file-component.html). It does _not_ require that the [`scoped` attribute](https://vue-loader.vuejs.org/en/features/scoped-css.html) be used. Scoping could be through [CSS modules](https://vue-loader.vuejs.org/en/features/css-modules.html), a class-based strategy such as [BEM](http://getbem.com/), or another library/convention.
+Esto es relevante sólo a [componentes single-file](../guide/single-file-components.html). *No* requiere que se use el [atributo `scoped`](https://vue-loader.vuejs.org/en/features/scoped-css.html). El "scoping" podría ser a través de [CSS modules](https://vue-loader.vuejs.org/en/features/css-modules.html), una estrategia basada en clases como [BEM](http://getbem.com/), ú otra biblioteca/convención.
 
-**Component libraries, however, should prefer a class-based strategy instead of using the `scoped` attribute.**
+**Para las bibliotecas de componentes, sin embargo, se debería implementar una estrategia basada en clases en vez de usar el atributo `scoped`.**
 
-This makes overriding internal styles easier, with human-readable class names that don't have too high specificity, but are still very unlikely to result in a conflict.
+Esto hace que sobreescribir los estilos internos sea más fácil, con nombres de clase legibles que no tienen una especificidad demasiado alta, y menos probable que generen conflictos.
 
-::: details Detailed Explanation
-If you are developing a large project, working with other developers, or sometimes include 3rd-party HTML/CSS (e.g. from Auth0), consistent scoping will ensure that your styles only apply to the components they are meant for.
+::: details Explicación Detallada
+Si está desarrollando un proyecto grande, trabajando con otros desarrolladores o, a veces, incluye HTML / CSS de terceros (por ejemplo, de Auth0), el "consistent scoping" garantizará que sus estilos solo se apliquen a los componentes para los que están diseñados.
 
-Beyond the `scoped` attribute, using unique class names can help ensure that 3rd-party CSS does not apply to your own HTML. For example, many projects use the `button`, `btn`, or `icon` class names, so even if not using a strategy such as BEM, adding an app-specific and/or component-specific prefix (e.g. `ButtonClose-icon`) can provide some protection.
+Más allá del atributo `scoped`, el uso de nombres de clase únicos puede ayudar a garantizar que el CSS de terceros no se aplique a su propio HTML. Por ejemplo, muchos proyectos usan los nombres de las clases `button`,` btn` o `icon`, por lo que incluso si no usan una estrategia como BEM, agregan un prefijo específico de la aplicación y / o componente específico (por ejemplo,`ButtonClose-icon`) puede proporcionar cierta protección.
 :::
 
 <div class="style-example style-example-bad">
-<h4>Bad</h4>
+<h4>Incorrecto</h4>
 
 ``` html
 <template>
@@ -321,14 +322,14 @@ Beyond the `scoped` attribute, using unique class names can help ensure that 3rd
 </div>
 
 <div class="style-example style-example-good">
-<h4>Good</h4>
+<h4>Correcto</h4>
 
 ``` html
 <template>
   <button class="button button-close">×</button>
 </template>
 
-<!-- Using the `scoped` attribute -->
+<!-- Utilizando el atributo `scoped` -->
 <style scoped>
 .button {
   border: none;
@@ -346,7 +347,7 @@ Beyond the `scoped` attribute, using unique class names can help ensure that 3rd
   <button :class="[$style.button, $style.buttonClose]">×</button>
 </template>
 
-<!-- Using CSS modules -->
+<!-- Utilizando CSS modules -->
 <style module>
 .button {
   border: none;
@@ -364,7 +365,7 @@ Beyond the `scoped` attribute, using unique class names can help ensure that 3rd
   <button class="c-Button c-Button--close">×</button>
 </template>
 
-<!-- Using the BEM convention -->
+<!-- Utilizando la convención BEM -->
 <style>
 .c-Button {
   border: none;
@@ -378,20 +379,20 @@ Beyond the `scoped` attribute, using unique class names can help ensure that 3rd
 ```
 </div>
 
-### Private property names <sup data-p="a">essential</sup>
+### Nombres de propiedades privadas <sup data-p="a">esencial</sup>
 
-**Use module scoping to keep private functions inaccessible from the outside. If that's not possible, always use the `$_` prefix for custom private properties in a plugin, mixin, etc that should not be considered public API. Then to avoid conflicts with code by other authors, also include a named scope (e.g. `$_yourPluginName_`).**
+**Utilice aclance de módulo para mantener funciones privadas innaccesibles desde el exterior. Si eso no es posible, siempre use el prefijo `$_` para propiedades privadas en un plugin, mixin, etc. que no debe ser considerado parte de la API pública. Luego, para evitar conflictos con código de otros desarrolladores, también incluya un _scope_ (ej. `$_yourPluginName_`).**
 
-::: details Detailed Explanation
-Vue uses the `_` prefix to define its own private properties, so using the same prefix (e.g. `_update`) risks overwriting an instance property. Even if you check and Vue is not currently using a particular property name, there is no guarantee a conflict won't arise in a later version.
+::: details Explicación Detallada
+Vue utiliza el prefijo `_` para definir sus propias propiedades privadas, entonces, utilizar el mismo prefijo (ej. `_update`) puede causar que una propiedad privada sea sobreescrita. Incluso si usted verifica y Vue no esta haciendo uso de dicho nombre, no hay garantía de que este conflicto no surja en una versión futura.
 
-As for the `$` prefix, its purpose within the Vue ecosystem is special instance properties that are exposed to the user, so using it for _private_ properties would not be appropriate.
+En cuanto al prefijo `$`, su propósito en el ecosistema de Vue es identificar las propiedades especiales de instancia que están expuestas al usuario, por lo tanto, utilizarlo para propiedades privadas no sería apropiado.
 
-Instead, we recommend combining the two prefixes into `$_`, as a convention for user-defined private properties that guarantee no conflicts with Vue.
+En su lugar, recomendamos combinar ambos prefijos en `$_`, como una convención para propiedades privadas, definidas por el usuario para que no haya conflicto con Vue.
 :::
 
 <div class="style-example style-example-bad">
-<h4>Bad</h4>
+<h4>Incorrecto</h4>
 
 ``` js
 const myGreatMixin = {
@@ -440,7 +441,7 @@ const myGreatMixin = {
 </div>
 
 <div class="style-example style-example-good">
-<h4>Good</h4>
+<h4>Correcto</h4>
 
 ``` js
 const myGreatMixin = {
