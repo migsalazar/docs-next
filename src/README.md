@@ -8,7 +8,7 @@ actionButtons:
     link: /
     extraClass: vuemastery-trigger primary
     icon: fa fa-play-circle
-  - text: Empezar
+  - text: Comenzar
     link: /guide/introduction
   - text: GitHub
     link: https://github.com/vuejs/vue

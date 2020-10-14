@@ -47,7 +47,7 @@ $ npm install vue@next
 
 ## CLI
 
-Vue provee una [interfaz de línea de comandos (CLI) oficial](https://github.com/vuejs/vue-cli) para realizar la creación rápida de la estructura base para las Single Page Applications. Esta provee _setups_ con baterías incluidas para un flujo de trabajo de frontend moderno. Solo toma unos minutos configurar y ejecutarlo con _hot-reload_, _lint-on-save_, y compilaciones listas para producción. Véase [the Vue CLI docs](https://cli.vuejs.org) para más detalles.
+Vue provee una [interfaz de línea de comandos (CLI) oficial](https://github.com/vuejs/vue-cli) para realizar la creación rápida de la estructura base para las Single Page Applications. Proporciona configuraciones de _build_ listas para su uso en un proceso de trabajo de _front-end_ moderno. Solo toma unos minutos configurar y ejecutarlo con _hot-reload_, _lint-on-save_, y compilaciones listas para producción. Véase [the Vue CLI docs](https://cli.vuejs.org) para más detalles.
 
 ::: tip
 La interfaz de línea de comandos (CLI) asume que usted posee conocimiento previo de Node.js y las herramientas de compilación asociadas. Si usted es nuevo en Vue o en el manejo de las herramientas de compilación de _front-end_, le recomendamos leer <a href="./">la guía</a> sin ninguna herramienta de compilación antes de usar la interfaz de línea de comandos.
