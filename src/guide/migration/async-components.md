@@ -44,10 +44,10 @@ import { defineAsyncComponent } from 'vue'
 import ErrorComponent from './components/ErrorComponent.vue'
 import LoadingComponent from './components/LoadingComponent.vue'
 
-// Async component without options
+// Componente asíncrono sin opciones
 const asyncPage = defineAsyncComponent(() => import('./NextPage.vue'))
 
-// Async component with options
+// Componente asíncrono con opciones
 const asyncPageWithOptions = defineAsyncComponent({
   loader: () => import('./NextPage.vue'),
   delay: 200,
@@ -74,12 +74,12 @@ const asyncPageWithOptions = defineAsyncComponent({
 Además, a diferencia de la versión 2.x, la función _loader_ ya no recibe los argumentos `resolve` ni `reject` y siempre debe retornar una Promesa.
 
 ```js
-// 2.x version
+// Versión 2.x
 const oldAsyncComponent = (resolve, reject) => {
   /* ... */
 }
 
-// 3.x version
+// Versión 3.x
 const asyncComponent = defineAsyncComponent(
   () =>
     new Promise((resolve, reject) => {

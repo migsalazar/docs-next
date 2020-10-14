@@ -60,7 +60,7 @@ const MyDirective = {
   mounted() {},
   beforeUpdate() {},
   updated() {},
-  beforeUnmount() {}, // new
+  beforeUnmount() {}, // nuevo
   unmounted() {}
 }
 ```
@@ -82,6 +82,26 @@ app.directive('highlight', {
 ```
 
 Ahora que los _hooks_ del ciclo de vida de directivas modificadas reflejan los de los componentes en sí, ¡estos se vuelven más fáciles de entender y recordar!
+
+### Casos Borde: Accediendo a la instancia del componente
+
+Generalmente, es recomendado mantener las directivas independientes de la instancia del componente en la que son utilizadas. Acceder a la instancia dentro de una directiva modificada es a menudo un signo de que la directiva debería ser un componente en sí mismo. Sin embargo, existen situaciones donde esto tiene sentido.
+
+En Vue 2, la instancia del componente tenía que ser accedida a través de un argumento `vnode`:
+
+```javascript
+bind(el, binding, vnode) {
+  const vm = vnode.context
+}
+```
+
+En Vue 3, la instancia ahora es parte del `binding`:
+
+```javascript
+mounted(el, binding, vnode) {
+  const vm = binding.instance
+}
+```
 
 ## Detalles de Implementación
 

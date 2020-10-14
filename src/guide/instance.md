@@ -5,7 +5,7 @@
 Cada aplicación Vue empieza con la creación de una **instancia de aplicación** con la función `createApp`:
 
 ```js
-const app = Vue.createApp({ /* options */ })
+const app = Vue.createApp({ /* opciones */ })
 ```
 
 La instancia de la aplicación es utilizada para registrar 'globals' que luego puede ser utilizada por componentes dentro de esa aplicación. Discutiremos eso en detalle más adelante en esta guía, pero como un ejemplo rápido:
@@ -35,7 +35,7 @@ Las opciones pasadas a `createApp` son utilizadas para configurar el **component
 Una aplicación necesita ser montada en un elemento del DOM. Por ejemplo, si queremos montar una aplicación Vue en `<div id="app"></div>`, deberíamos pasar `#app`:
 
 ```js
-const RootComponent = { /* options */ }
+const RootComponent = { /* opciones */ }
 const app = Vue.createApp(RootComponent)
 const vm = app.mount('#app')
 ```
@@ -93,7 +93,7 @@ Vue.createApp({
     return { count: 1 }
   },
   created() {
-    // `this` points to the vm instance
+    // `this` apunta a la instancia de vm
     console.log('count is: ' + this.count) // => "count is: 1"
   }
 })
