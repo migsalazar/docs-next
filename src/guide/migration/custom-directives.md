@@ -89,7 +89,8 @@ En Vue 3, ahora soportamos fragmentos, que nos permite retornar más de un nodo 
 
 ```html
 <template>
-  <li>¡Hola</li>
+  <li>Hello</li>
+```
   <li>Vue</li>
   <li>Devs!</li>
 </template>
