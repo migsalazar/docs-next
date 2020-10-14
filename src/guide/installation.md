@@ -1,5 +1,13 @@
 # Instalación
 
+Vue.js está construido por diseño para ser adoptable incrementalmente. Esto significa que puede ser integrado de múltiples formas en un proyecto dependiendo de los requerimientos.
+
+Existen tres formas principales de añadir Vue.js a un proyecto:
+
+1. Importarlo como un [paquete CDN](#cdn) en la página
+2. Instalarlo utilizando [npm](#npm)
+3. Usando la [línea de comandos oficial](#cli) para crear la estructura de un proyecto, que provee _setups_ con baterías incluidas para un flujo de trabajo de _frontend_ moderno (por ejemplo, _hot-reload_, _lint-on-save_, y mucho más)
+
 ## Notas de Lanzamiento
 
 Última Versión: ![npm](https://img.shields.io/npm/v/vue/next.svg)
