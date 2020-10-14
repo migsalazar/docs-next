@@ -94,7 +94,7 @@ Vue.createApp({
   },
   created() {
     // `this` apunta a la instancia de vm
-    console.log('count is: ' + this.count) // => "count is: 1"
+    console.log('count is: ' + this.count) // => "count es: 1"
   }
 })
 ```
