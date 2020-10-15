@@ -1,20 +1,20 @@
-# Class and Style Bindings
+# Enlace Clases y Estilos
 
-A common need for data binding is manipulating an element's class list and its inline styles. Since they are both attributes, we can use `v-bind` to handle them: we only need to calculate a final string with our expressions. However, meddling with string concatenation is annoying and error-prone. For this reason, Vue provides special enhancements when `v-bind` is used with `class` and `style`. In addition to strings, the expressions can also evaluate to objects or arrays.
+Una necesidad común de _data binding_ es manipular la lista de clases de un elemento y sus estilos en línea. Como ambos son atributos, podemos usar `v-bind` para manejarlos: solo necesitamos crear una cadena de texto con nuestras expresiones. Sin embargo, concatenar cadenas de texto puede llegar a ser incómodo y propenso a errores. Por esta razón, Vue proporciona mejoras cuando se utiliza `v-bind` con `class` y `style`. Además de las cadenas de texto, las expresiones también pueden evaluar objetos o matrices.
 
-## Binding HTML Classes
+## Enlace de clases HTML
 
-### Object Syntax
+### Sintaxis de Objeto
 
-We can pass an object to `:class` (short for `v-bind:class`) to dynamically toggle classes:
+Podemos pasar un objeto a `:class` (versión abreviada de `v-bind:class`) para la asignación dinámica de clases:
 
 ```html
 <div :class="{ active: isActive }"></div>
 ```
 
-The above syntax means the presence of the `active` class will be determined by the [truthiness](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) of the data property `isActive`.
+La sintaxis de arriba tiene como resultado la clase `active` según el [valor booleano](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) de la propiedad `isActive`.
 
-You can have multiple classes toggled by having more fields in the object. In addition, the `:class` directive can also co-exist with the plain `class` attribute. So given the following template:
+Puede hacer múltiple asignación de clases al tener más campos en el objeto. Además, la directiva `:class` también puede ser utilizada con el atributo `class`. De modo que con la siguiente plantilla:
 
 ```html
 <div
@@ -23,7 +23,7 @@ You can have multiple classes toggled by having more fields in the object. In ad
 ></div>
 ```
 
-And the following data:
+Y el siguiente objeto de datos:
 
 ```js
 data() {
@@ -34,15 +34,15 @@ data() {
 }
 ```
 
-It will render:
+Se renderizará:
 
 ```html
 <div class="static active"></div>
 ```
 
-When `isActive` or `hasError` changes, the class list will be updated accordingly. For example, if `hasError` becomes `true`, the class list will become `"static active text-danger"`.
+Cuando `isActive` o `hasError` cambien, la lista de clases se actualizará consecuentemente. Por ejemplo, si `hasError` se convierte en `true`, la lista de clases se convertirá en `"static active text-danger"`.
 
-The bound object doesn't have to be inline:
+El objeto no tiene por qué estar en la misma línea:
 
 ```html
 <div :class="classObject"></div>
@@ -59,7 +59,7 @@ data() {
 }
 ```
 
-This will render the same result. We can also bind to a [computed property](computed.md) that returns an object. This is a common and powerful pattern:
+Esto renderizará el mismo resultado. También podemos enlazar una [propiedad computada](computed.md) que retorna un objeto. Esto es un patrón común y poderoso:
 
 ```html
 <div :class="classObject"></div>
@@ -82,9 +82,9 @@ computed: {
 }
 ```
 
-### Array Syntax
+### Sintaxis de Matriz
 
-We can pass an array to `:class` to apply a list of classes:
+Podemos pasar una matriz a `:class` para aplicar una lista de clases:
 
 ```html
 <div :class="[activeClass, errorClass]"></div>
@@ -99,33 +99,33 @@ data() {
 }
 ```
 
-Which will render:
+Que renderizará:
 
 ```html
 <div class="active text-danger"></div>
 ```
 
-If you would like to also toggle a class in the list conditionally, you can do it with a ternary expression:
+Si le gustaría activar una clase en la lista de manera condicional, usted puede hacerlo con una expresión ternaria:
 
 ```html
 <div :class="[isActive ? activeClass : '', errorClass]"></div>
 ```
 
-This will always apply `errorClass`, but will only apply `activeClass` when `isActive` is truthy.
+Esto siempre aplicará `errorClass`, pero solo aplicará `activeClass` cuando `isActive` sea verdadero.
 
-However, this can be a bit verbose if you have multiple conditional classes. That's why it's also possible to use the object syntax inside array syntax:
+Sin embargo, esto puede ser un poco verborrágico si usted tiene múltiples clases condicionales. Por eso también es posible utilizar la sintaxis de objeto dentro de la sintaxis de colección:
 
 ```html
 <div :class="[{ active: isActive }, errorClass]"></div>
 ```
 
-### With Components
+### Con Componentes
 
-> This section assumes knowledge of [Vue Components](component-basics.md). Feel free to skip it and come back later.
+> Esta sección asume que usted tiene conocimientos sobre [Componentes de Vue](component-basics.md). Siéntase libre de saltársela y volver más tarde.
 
-When you use the `class` attribute on a custom component with a single root element, those classes will be added to this element. Existing classes on this element will not be overwritten.
+Cuando usa el atributo `class` en un componente personalizado con un único elemento raíz, estas clases se agregarán a este elemento. Las clases existentes en este elemento no serán sobrescritas.
 
-For example, if you declare this component:
+Por ejemplo, si declara este componente:
 
 ```js
 const app = Vue.createApp({})
@@ -135,7 +135,7 @@ app.component('my-component', {
 })
 ```
 
-Then add some classes when using it:
+Y agrega algunas clases al usarlo:
 
 ```html
 <div id="app">
@@ -143,25 +143,25 @@ Then add some classes when using it:
 </div>
 ```
 
-The rendered HTML will be:
+El HTML renderizado será:
 
 ```html
 <p class="foo bar baz boo">Hi</p>
 ```
 
-The same is true for class bindings:
+Lo mismo aplica para el enlace de clases:
 
 ```html
 <my-component :class="{ active: isActive }"></my-component>
 ```
 
-When `isActive` is truthy, the rendered HTML will be:
+Cuando `isActive` es verdadero, el HTML renderizado será:
 
 ```html
 <p class="foo bar active">Hi</p>
 ```
 
-If your component has multiple root elements, you would need to define which component will receive this class. You can do this using `$attrs` component property:
+Si su componente tiene múltiples elementos raíz, necesitará definir cuál componente recibirá esta clase. Puede hacer esto utilizando la propiedad de componente `$attrs`:
 
 ```html
 <div id="app">
@@ -180,13 +180,13 @@ app.component('my-component', {
 })
 ```
 
-You can learn more about component attribute inheritance in [Non-Prop Attributes](component-attrs.html) section.
+Puede conocer más sobre herencia de atributos de componentes en la sección [Atributos que no son propiedades](component-attrs.html).
 
-## Binding Inline Styles
+## Enlace de estilos en línea
 
-### Object Syntax
+### Sintaxis de Objeto
 
-The object syntax for `:style` is pretty straightforward - it looks almost like CSS, except it's a JavaScript object. You can use either camelCase or kebab-case (use quotes with kebab-case) for the CSS property names:
+La sintaxis de objeto para `:style` es muy sencilla, es similar a CSS, excepto que es un objeto JavaScript. Puede usar tanto _camelCase_ como _kebab-case_ (use comillas con _kebab-case_) para los nombres de propiedades CSS:
 
 ```html
 <div :style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
@@ -201,7 +201,7 @@ data() {
 }
 ```
 
-It is often a good idea to bind to a style object directly so that the template is cleaner:
+A menudo es una buena idea enlazar directamente un objeto de estilo para que la plantilla sea más limpia:
 
 ```html
 <div :style="styleObject"></div>
@@ -218,26 +218,26 @@ data() {
 }
 ```
 
-Again, the object syntax is often used in conjunction with computed properties that return objects.
+Nuevamente, la sintaxis de objeto es a menudo usada en conjunción con propiedades computadas que retornan objetos.
 
-### Array Syntax
+### Sintaxis de Matriz
 
-The array syntax for `:style` allows you to apply multiple style objects to the same element:
+La sintaxis de array `:style` permite aplicar múltiples objetos de estilo al mismo elemento:
 
 ```html
 <div :style="[baseStyles, overridingStyles]"></div>
 ```
 
-### Auto-prefixing
+### Auto-prefijado
 
-When you use a CSS property that requires [vendor prefixes](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) in `:style`, for example `transform`, Vue will automatically detect and add appropriate prefixes to the applied styles.
+Cuando utilice una propiedad CSS que requiera [prefijos de proveedores](https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix) en `:style`,  como por ejemplo `transform`, Vue detectará automáticamente y agregará los prefijos correspondientes a los estilos aplicados.
 
-### Multiple Values
+### Valores múltiples
 
-You can provide an array of multiple (prefixed) values to a style property, for example:
+Puede proveer una matriz de valores múltiples (de prefijos) a una propiedad de estilo, por ejemplo:
 
 ```html
 <div :style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
 ```
 
-This will only render the last value in the array which the browser supports. In this example, it will render `display: flex` for browsers that support the unprefixed version of flexbox.
+Esto solo renderizará el último valor en el array que el navegador soporte. En este ejemplo, se renderizará `display: flex` para los navegadores que soportan la versión sin prefijo de _flexbox_.
