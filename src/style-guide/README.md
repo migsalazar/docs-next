@@ -1475,22 +1475,22 @@ computed: {
 ```
 </div>
 
-## Priority D Rules: Use with Caution <span class="hide-from-sidebar">(Potentially Dangerous Patterns)</span>
+## Reglas de prioridad D: Utilizar con Precaución <span class="hide-from-sidebar">(Patrones Potencialmente Peligrosos)</span>
 
-### Element selectors with `scoped` <sup data-p="d">use with caution</sup>
+### Selector de elemento con `scoped` <sup data-p="d">utilizar con precaución</sup>
 
-**Element selectors should be avoided with `scoped`.**
+**Los selectores de elementos deben ser evitados con `scoped`.**
 
-Prefer class selectors over element selectors in `scoped` styles, because large numbers of element selectors are slow.
+Prefiera selectores de clase sobre selectores de elementos en estilos `scoped`, ya que grandes números de selectores de elementos son lentos.
 
-::: details Detailed Explanation
-To scope styles, Vue adds a unique attribute to component elements, such as `data-v-f3f3eg9`. Then selectors are modified so that only matching elements with this attribute are selected (e.g. `button[data-v-f3f3eg9]`).
+::: details Explicación Detallada
+Para los estilos con `scope`, Vue añade un atributo único a los elementos del componente, como `data-v-f3f3eg9`. Luego, los selectores son modificados para que solo los elementos con ese atributo sean seleccionados (por ejemplo, `button[data-v-f3f3eg9]`).
 
-The problem is that large numbers of [element-attribute selectors](http://stevesouders.com/efws/css-selectors/csscreate.php?n=1000&sel=a%5Bhref%5D&body=background%3A+%23CFD&ne=1000) (e.g. `button[data-v-f3f3eg9]`) will be considerably slower than [class-attribute selectors](http://stevesouders.com/efws/css-selectors/csscreate.php?n=1000&sel=.class%5Bhref%5D&body=background%3A+%23CFD&ne=1000) (e.g. `.btn-close[data-v-f3f3eg9]`), so class selectors should be preferred whenever possible.
+El problema es que grandes números de [selectores de atributo-elemento](http://stevesouders.com/efws/css-selectors/csscreate.php?n=1000&sel=a%5Bhref%5D&body=background%3A+%23CFD&ne=1000) (por ejemplo, `button[data-v-f3f3eg9]`) será considerablemente más lento que [selectores atributo-clase](http://stevesouders.com/efws/css-selectors/csscreate.php?n=1000&sel=.class%5Bhref%5D&body=background%3A+%23CFD&ne=1000) (por ejemplo, `.btn-close[data-v-f3f3eg9]`), así que los selectores de clase deben ser utilizados siempre que sea posible.
 :::
 
 <div class="style-example style-example-bad">
-<h4>Bad</h4>
+<h4>Incorrecto</h4>
 
 ``` html
 <template>
@@ -1506,7 +1506,7 @@ button {
 </div>
 
 <div class="style-example style-example-good">
-<h4>Good</h4>
+<h4>Correcto</h4>
 
 ``` html
 <template>
@@ -1521,16 +1521,16 @@ button {
 ```
 </div>
 
-### Implicit parent-child communication <sup data-p="d">use with caution</sup>
+### Comunicación implícita entre componentes padre-hijo <sup data-p="d">utilizar con precaución</sup>
 
-**Props and events should be preferred for parent-child component communication, instead of `this.$parent` or mutating props.**
+**Se debe preferir el uso de _props_ y eventos para la comunicación entre componentes padre-hijo, en lugar de `this.$parent` o mutación de _props_.**
 
-An ideal Vue application is props down, events up. Sticking to this convention makes your components much easier to understand. However, there are edge cases where prop mutation or `this.$parent` can simplify two components that are already deeply coupled.
+Una aplicación Vue ideal es usada con _props_ para abajo y eventos para arriba. Apegarse a esta convención hace que sus componentes sean más fáciles de entender. Sin embargo, hay casos border donde la mutación de _props_ o el uso de `this.$parent` puede simplificar dos componentes que están fuertemente acopladas.
 
-The problem is, there are also many _simple_ cases where these patterns may offer convenience. Beware: do not be seduced into trading simplicity (being able to understand the flow of your state) for short-term convenience (writing less code).
+El problema es que también existen muchos casos _simples_ donde estos patrones pueden ofrecer conveniencia. Cuidado: no se deje seducir por la conveniencia a corto plazo (escribir menos código) sobre la simpicidad (poder entender el flujo de su estado).
 
 <div class="style-example style-example-bad">
-<h4>Bad</h4>
+<h4>Incorrecto</h4>
 
 ``` js
 app.component('TodoItem', {
@@ -1573,7 +1573,7 @@ app.component('TodoItem', {
 </div>
 
 <div class="style-example style-example-good">
-<h4>Good</h4>
+<h4>Correcto</h4>
 
 ``` js
 app.component('TodoItem', {
@@ -1614,16 +1614,16 @@ app.component('TodoItem', {
 ```
 </div>
 
-### Non-flux state management <sup data-p="d">use with caution</sup>
+### Manejo de estado sin utilizar flux <sup data-p="d">utilizar con precaución</sup>
 
-**[Vuex](https://github.com/vuejs/vuex) should be preferred for global state management, instead of `this.$root` or a global event bus.**
+**Se debe preferir el uso de [Vuex](https://github.com/vuejs/vuex) para el manejo del estado global, en vez de `this.$root` o un `event bus` global.**
 
-Managing state on `this.$root` and/or using a [global event bus](https://vuejs.org/v2/guide/migration.html#dispatch-and-broadcast-replaced) can be convenient for very simple cases, but it is not appropriate for most applications.
+Manejar el estado en `this.$root` y/o utilizado un _event bus_ global puede ser conveniente para casos simples, pero no son apropiados para la mayoría de las aplicaciones. Vuex no solo ofrece un lugar central para manejar el estado, sino que también ofrece herramiento para organizar, rastrear y depurar cambios de estado.
 
-Vuex is the [official flux-like implementation](https://vuejs.org/v2/guide/state-management.html#Official-Flux-Like-Implementation) for Vue, and offers not only a central place to manage state, but also tools for organizing, tracking, and debugging state changes. It integrates well in the Vue ecosystem (including full [Vue DevTools](https://vuejs.org/v2/guide/installation.html#Vue-Devtools) support).
+Vuex es la [implementación _flux-like_ oficial](/guide/state-management.html#official-flux-like-implementation) para Vue, y ofrece no solo una forma central de maneja de estado, sino también herramientas para organizar, observar y depurar cambios en el estado. Se integrado de buena forma al ecosistema de Vue (incluyendo total soporte en [Vue DevTools](/guide/installation.html#vue-devtools)).
 
 <div class="style-example style-example-bad">
-<h4>Bad</h4>
+<h4>Incorrecto</h4>
 
 ``` js
 // main.js
@@ -1652,7 +1652,7 @@ const app = createApp({
 </div>
 
 <div class="style-example style-example-good">
-<h4>Good</h4>
+<h4>Correcto</h4>
 
 ``` js
 // store/modules/todos.js
