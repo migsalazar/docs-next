@@ -1259,114 +1259,114 @@ Si bien los valores de atributos sin espacios no requiren comillas en HTML, esta
 </div>
 
 
-## Priority C Rules: Recommended <span class="hide-from-sidebar">(Minimizing Arbitrary Choices and Cognitive Overhead)</span>
+## Reglas de prioridad C: Recomendadas <span class="hide-from-sidebar">(Minimizando Elecciones Arbitrarias y Sobrecarga Cognitiva)</span>
 
-### Component/instance options order <sup data-p="c">recommended</sup>
+### Orden de las opciones en un componente/instancia <sup data-p="c">recomendado</sup>
 
-**Component/instance options should be ordered consistently.**
+**Opciones de componentes/instancias deben ser ordenadas consistentemente.**
 
-This is the default order we recommend for component options. They're split into categories, so you'll know where to add new properties from plugins.
+Este es el orden que recomendamos para las opciones de los componentes. Estas están separadas en categorías, así usted sabe donde agregar nuevas propiedades de _plugins_.
 
-1. **Global Awareness** (requires knowledge beyond the component)
-    - `name`
+1. **Consciencia Global** (requiere conocimiento más allá del componente)
+  - `name`
 
-2. **Template Modifiers** (changes the way templates are compiled)
-    - `delimiters`
+2. **Modificadores de template** (cambia la forma en que el template es compilado)
+  - `delimiters`
 
-3. **Template Dependencies** (assets used in the template)
-    - `components`
-    - `directives`
+3. **Dependencias de template** (_assets_ utilizados en el template)
+  - `components`
+  - `directives`
 
-4. **Composition** (merges properties into the options)
-    - `extends`
-    - `mixins`
-    - `provide`/`inject`
+4. **Composición** (mezcla propiedades en las opciones)
+  - `extends`
+  - `mixins`
+  - `provide`/`inject`
 
-5. **Interface** (the interface to the component)
+5. **Interfaz** (la interfaz del componente)
     - `inheritAttrs`
     - `props`
     - `emits`
 
-6. **Composition API** (the entry point for using the Composition API)
+6. **_Composition API_** (punto de entrada para utilizar la _Composition API_)
     - `setup`
 
-7. **Local State** (local reactive properties)
-    - `data`
-    - `computed`
+7. **Estado Local** (propiedades reactivas locales)
+  - `data`
+  - `computed`
 
-8. **Events** (callbacks triggered by reactive events)
-    - `watch`
-    - Lifecycle Events (in the order they are called)
-        - `beforeCreate`
-        - `created`
-        - `beforeMount`
-        - `mounted`
-        - `beforeUpdate`
-        - `updated`
-        - `activated`
-        - `deactivated`
-        - `beforeUnmount`
-        - `unmounted`
-        - `errorCaptured`
-        - `renderTracked`
-        - `renderTriggered`
+8. **Eventos** (_callbacks_ disparados por eventos reactivos)
+  - `watch`
+  - Eventos del ciclo de vida (en el orden que son invocados)
+    - `beforeCreate`
+    - `created`
+    - `beforeMount`
+    - `mounted`
+    - `beforeUpdate`
+    - `updated`
+    - `activated`
+    - `deactivated`
+    - `beforeUnmount`
+    - `unmounted`
+    - `errorCaptured`
+    - `renderTracked`
+    - `renderTriggered`
 
-9.  **Non-Reactive Properties** (instance properties independent of the reactivity system)
-    - `methods`
+9. **Propiedades no reactivas** (propiedades de instancia independientes del sistema de reactividad)
+- `methods`
 
-10. **Rendering** (the declarative description of the component output)
-    - `template`/`render`
+10. **Renderización** (la descripción declarativa de la salida del componente)
+  - `template`/`render`
 
-### Element attribute order <sup data-p="c">recommended</sup>
+### Order de los atributos en un elemento <sup data-p="c">recomendado</sup>
 
-**The attributes of elements (including components) should be ordered consistently.**
+**Orden de los atributos de elementos (incluyendo componentes) deben ser ordenadas consistentemente.**
 
-This is the default order we recommend for component options. They're split into categories, so you'll know where to add custom attributes and directives.
+Este es el orden que recomendamos para las opciones de los componentes. Estas están separadas en categorías, así usted sabe donde agregar nuevos atributos y directivas.
 
-1. **Definition** (provides the component options)
-    - `is`
+1. **Definición** (provee las opciones del componente)
+  - `is`
 
-2. **List Rendering** (creates multiple variations of the same element)
-    - `v-for`
+2. **Renderización de Listas** (crea múltiples variaciones del mismo elemento)
+  - `v-for`
 
-3. **Conditionals** (whether the element is rendered/shown)
-    - `v-if`
-    - `v-else-if`
-    - `v-else`
-    - `v-show`
-    - `v-cloak`
+3. **Condicionales** (sí el elemento es renderizado/mostrado)
+  - `v-if`
+  - `v-else-if`
+  - `v-else`
+  - `v-show`
+  - `v-cloak`
 
-4. **Render Modifiers** (changes the way the element renders)
-    - `v-pre`
-    - `v-once`
+4. **Modificadores de renderizado** (cambia la forma en la que el elemento se renderiza)
+  - `v-pre`
+  - `v-once`
 
-5. **Global Awareness** (requires knowledge beyond the component)
-    - `id`
+5. **Consciencia Global** (requiere conocimiento más allá del componente)
+  - `id`
 
-6. **Unique Attributes** (attributes that require unique values)
-    - `ref`
-    - `key`
+6. **Atributos Únicos** (atributos que requieren valores únicos)
+  - `ref`
+  - `key`
 
-7. **Two-Way Binding** (combining binding and events)
-    - `v-model`
+7. **Vinculación Bidireccional** (combinación de vinculación y eventos)
+  - `v-model`
 
-8. **Other Attributes** (all unspecified bound & unbound attributes)
+8. **Otros Atributos** (todos los no especificados)
 
-9. **Events** (component event listeners)
-    - `v-on`
+9. **Eventos** (_event listeners_ del componente)
+  - `v-on`
 
-10. **Content** (overrides the content of the element)
-    - `v-html`
-    - `v-text`
+10. **Contenido** (sobreescribe el contenido del elemento)
+  - `v-html`
+  - `v-text`
 
-### Empty lines in component/instance options <sup data-p="c">recommended</sup>
+### Líneas vacías en las opciones de un componente/instancia <sup data-p="c">recomendado</sup>
 
-**You may want to add one empty line between multi-line properties, particularly if the options can no longer fit on your screen without scrolling.**
+**Usted puede añadir una línea vacía entre propiedades que se extienden en múltiples líneas, particularmente si las opciones no entrar en la pantalla sin _scrollear_.**
 
-When components begin to feel cramped or difficult to read, adding spaces between multi-line properties can make them easier to skim again. In some editors, such as Vim, formatting options like this can also make them easier to navigate with the keyboard.
+Cuando un componente comienza a sentirse apretado o difícil de leer, añadir espacios entre propiedades que se extienden en múltiples líneas puede mejorar la legibilidad. En algunos editores, como Vim, opciones de formateo como esta pueden facilitar la navegación con el teclado.
 
 <div class="style-example style-example-good">
-<h4>Good</h4>
+<h4>Correcto</h4>
 
 ``` js
 props: {
@@ -1396,8 +1396,8 @@ computed: {
 ```
 
 ``` js
-// No spaces are also fine, as long as the component
-// is still easy to read and navigate.
+// No tener espacios también es correcto, siempre y cuando
+// el componente siga siendo fácil de leer y navegar.
 props: {
   value: {
     type: String,
@@ -1421,12 +1421,12 @@ computed: {
 ```
 </div>
 
-### Single-file component top-level element order <sup data-p="c">recommended</sup>
+### Orden de los elementos de nivel superior de un componente single-file <sup data-p="c">recomendado</sup>
 
-**[Single-file components](../guide/single-file-component.html) should always order `<script>`, `<template>`, and `<style>` tags consistently, with `<style>` last, because at least one of the other two is always necessary.**
+**[Componentes single-file](../guide/single-file-components.html) siempre deben ordenar las etiquetas `<script>`, `<template>`, y `<style>` consistentemente, con `<style>` por último, ya que al menos una de las otras dos siempre es necesaria.**
 
 <div class="style-example style-example-bad">
-<h4>Bad</h4>
+<h4>Incorrecto</h4>
 
 ``` html
 <style>/* ... */</style>
@@ -1448,7 +1448,7 @@ computed: {
 </div>
 
 <div class="style-example style-example-good">
-<h4>Good</h4>
+<h4>Correcto</h4>
 
 ``` html
 <!-- ComponentA.vue -->
