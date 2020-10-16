@@ -22,7 +22,7 @@ Se ha descubierto que estas reglas mejoran la legibilidad y/o la experiencia del
 
 ### Prioridad C: Recomendadas
 
-Donde existen opciones múltiples e igualmente buenas, se puede hacer una elección arbitraria para garantizar la coherencia. En estas reglas, describimos cada opción aceptable y sugerimos una opción predeterminada. Eso significa que puede sentirse libre de hacer una elección diferente en su propia base de código, siempre que sea coherente y tenga una buena razón para ello. Por favor, justifique su elección! Al adaptarse al estándar de la comunidad, usted:
+Donde existen opciones múltiples e igualmente buenas, se puede hacer una elección arbitraria para garantizar la coherencia. En estas reglas, describimos cada opción aceptable y sugerimos una opción predeterminada. Eso significa que puede sentirse libre de hacer una elección diferente en su propia base de código, siempre que sea coherente y tenga una buena razón para ello. Por favor, ¡justifique su elección! Al adaptarse al estándar de la comunidad, usted:
 
 1. Entrena su cerebro para analizar más fácilmente la mayoría del código de comunidad que encuentre
 2. Será capaz de copiar y pegar la mayoría de los ejemplos de código de comunidad sin modificación
@@ -300,7 +300,7 @@ Esto es relevante sólo a [componentes single-file](../guide/single-file-compone
 Esto hace que sobreescribir los estilos internos sea más fácil, con nombres de clase legibles que no tienen una especificidad demasiado alta, y menos probable que generen conflictos.
 
 ::: details Explicación Detallada
-Si está desarrollando un proyecto grande, trabajando con otros desarrolladores o, a veces, incluye HTML / CSS de terceros (por ejemplo, de Auth0), el "consistent scoping" garantizará que sus estilos solo se apliquen a los componentes para los que están diseñados.
+Si está desarrollando un proyecto grande, trabajando con otros desarrolladores o, a veces, incluye HTML / CSS de terceros (por ejemplo, de Auth0), un "scoping" bien definido garantizará que sus estilos solo se apliquen a los componentes para los que están diseñados.
 
 Más allá del atributo `scoped`, el uso de nombres de clase únicos puede ayudar a garantizar que el CSS de terceros no se aplique a su propio HTML. Por ejemplo, muchos proyectos usan los nombres de las clases `button`,` btn` o `icon`, por lo que incluso si no usan una estrategia como BEM, agregan un prefijo específico de la aplicación y / o componente específico (por ejemplo,`ButtonClose-icon`) puede proporcionar cierta protección.
 :::
