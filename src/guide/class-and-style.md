@@ -105,7 +105,7 @@ Que renderizará:
 <div class="active text-danger"></div>
 ```
 
-Si le gustaría activar una clase en la lista de manera condicional, usted puede hacerlo con una expresión ternaria:
+Si usted quisiera activar una clase en la lista de manera condicional, usted puede hacerlo con una expresión ternaria:
 
 ```html
 <div :class="[isActive ? activeClass : '', errorClass]"></div>
@@ -180,7 +180,7 @@ app.component('my-component', {
 })
 ```
 
-Puede conocer más sobre herencia de atributos de componentes en la sección [Atributos que no son propiedades](component-attrs.html).
+Puede conocer más sobre herencia de atributos de componentes en la sección [atributos que no son propiedades](component-attrs.html).
 
 ## Enlace de estilos en línea
 

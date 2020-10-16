@@ -160,7 +160,7 @@ Por ejemplo:
 <!-- Dado que ya existe un rico ecosistema de bibliotecas ajax         -->
 <!-- y colecciones de métodos de utilidad de uso general, Vue core     -->
 <!-- es capaz de permanecer pequeño al no reinventarlos. Esto también  -->
-<!-- te da la libertad de usar aquello con lo que estás familiarizado. -->
+<!-- le da la libertad de usar aquello con lo que estás familiarizado. -->
 <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
 <script>
   const watchExampleVM = Vue.createApp({
