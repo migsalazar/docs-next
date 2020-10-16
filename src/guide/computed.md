@@ -2,7 +2,7 @@
 
 ## Propiedades Computadas
 
-Las expresiones en el _template_ son muy convenientes, pero están diseñadas para operaciones simples. Poner demasiada lógica en sus _templates_ puede hacerlos grandes, complejos y difíciles de mantener. Por ejemplo, si tenemos un objeto con una matriz anidada:
+Las expresiones en el _template_ son muy convenientes, pero están diseñadas para operaciones simples. Poner demasiada lógica en sus _templates_ puede hacerlos grandes, complejos y difíciles de mantener. Por ejemplo, si tenemos un objeto con un arreglo anidado:
 
 ```js
 Vue.createApp({
@@ -25,7 +25,7 @@ Y queremos mostrar diferentes mensajes dependiendo de si `author` ya tiene o no 
 
 ```html
 <div id="computed-basics">
-  <p>Has published books:</p>
+  <p>Tiene libros publicados:</p>
   <span>{{ author.books.length > 0 ? 'Yes' : 'No' }}</span>
 </div>
 ```
@@ -38,7 +38,7 @@ Es por eso que para cualquier lógica compleja que incluya datos reactivos, debe
 
 ```html
 <div id="computed-basics">
-  <p>Has published books:</p>
+  <p>Tiene libros publicados:</p>
   <span>{{ publishedBooksMessage }}</span>
 </div>
 ```
@@ -61,7 +61,7 @@ Vue.createApp({
     // un getter computado
     publishedBooksMessage() {
       // `this` apunta a la instancia vm
-      return this.author.books.length > 0 ? 'Yes' : 'No'
+      return this.author.books.length > 0 ? 'Sí' : 'No'
     }
   }
 }).mount('#computed-basics')
@@ -78,7 +78,7 @@ Resultado:
 
 Aquí hemos declarado una propiedad computada `publishedBooksMessage`.
 
-Intente cambiar el valor de la matriz `books` en el objeto de datos `data` de la aplicación y observará cómo cambia `publishedBooksMessage` en consecuencia.
+Intente cambiar el valor del arreglo `books` en el objeto de datos `data` de la aplicación y observará cómo cambia `publishedBooksMessage` en consecuencia.
 
 Puede enlazar datos a propiedades computadas en el _template_ al igual que una propiedad normal. Vue es consciente de que `vm.publishedBooksMessage` depende de `vm.author.books`, por lo cual actualizará todos los enlaces que dependan de `vm.publishedBooksMessage` cuando `vm.author.books` cambie. Y lo mejor de todo es que hemos creado esta relación de dependencia de manera declarativa: la función computada _getter_ no tiene efectos secundarios, lo que facilita la prueba y la comprensión.
 
@@ -94,7 +94,7 @@ Es posible que haya notado que podemos lograr el mismo resultado al invocar un m
 // en el componente
 methods: {
   calculateBooksMessage() {
-    return this.author.books.length > 0 ? 'Yes' : 'No'
+    return this.author.books.length > 0 ? 'Sí' : 'No'
   }
 }
 ```
@@ -113,7 +113,7 @@ computed: {
 
 En comparación, una invocación de método **siempre** ejecutará la función cada vez que ocurre una re-renderización.
 
-¿Por qué necesitamos caché? Imagine que tenemos una costosa propiedad computada `list`, que requiere hacer un bucle a través de una gran matriz y hace muchos cálculos. Entonces podemos tener otras propiedades computadas que a su vez dependen de `list`. Sin caché, ¡estaríamos ejecutando el _getter_ de `list` muchas veces más de lo necesario!. En los casos en que no desee el almacenamiento en caché, utilice un `method` en su lugar.
+¿Por qué necesitamos caché? Imagine que tenemos una costosa propiedad computada `list`, que requiere hacer un bucle a través de un gran arreglo y hace muchos cálculos. Entonces podemos tener otras propiedades computadas que a su vez dependen de `list`. Sin caché, ¡estaríamos ejecutando el _getter_ de `list` muchas veces más de lo necesario!. En los casos en que no desee el almacenamiento en caché, utilice un `method` en su lugar.
 
 ### Setter Computado
 
@@ -149,7 +149,7 @@ Por ejemplo:
 ```html
 <div id="watch-example">
   <p>
-    Ask a yes/no question:
+    Haga una pregunta de sí/no:
     <input v-model="question" />
   </p>
   <p>{{ answer }}</p>
