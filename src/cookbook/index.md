@@ -20,7 +20,7 @@ Con todas estas diferencias, por favor tome en cuenta que el libro de recetas _n
 
 ### Lo que estamos buscando
 
-El libro de recetas proporciona ejemplos típicos de la vida real o interesantes para que los desarrolladores puedan usar como modelo, y también explica progresivamente detalles más complejos. Nuestro objetivo es ir más allá de un simple ejemplo introductorio, y demostrar los conceptos que son más aplicables, así como algunas advertencias al enfoque utilizado.
+El libro de recetas proporciona ejemplos típicos de la vida real o interesantes para que los desarrolladores puedan usar como modelo, y también explica progresivamente detalles más complejos. Nuestro objetivo es ir más allá de un simple ejemplo introductorio, y demostrar los conceptos que son ampliamente aplicables, así como algunas advertencias al enfoque utilizado.
 
 Si está interesado en contribuir, inicie la colaboración reportando un _issue_ con su idea y con la etiqueta **cookbook idea**, para que podamos guiarlo hacia la creación de un _pull request_ exitoso. Después de que su idea haya sido aprobada, por favor siga tanto como sea posible la plantilla que se muestra a continuación. Algunas secciones son requeridas, y otras son opcionales. Seguir el orden numérico se sugiere fuertemente, pero no es obligatorio.
 
@@ -32,7 +32,7 @@ Las recetas generalmente deben:
 - Enlazar a otros documentos, en lugar de re-explicar conceptos.
 - Describir el problema, en lugar de asumir familiaridad.
 - Explicar el proceso, en lugar de solo mostrar el resultado.
-- Explicar las ventajas y desventajas de su estrategia, incluso, cuándo es apropiado y cuándo no.
+- Explicar las ventajas y desventajas de su estrategia, incluso, cuándo es apropiada y cuándo no.
 - Mencione soluciones alternativas si son relevantes, pero deje las exploraciones en profundidad en una receta separada.
 
 Le solicitamos que siga la siguiente plantilla. Sin embargo, entendemos que hay ocasiones en las que es posible que deba desviarse por claridad o flujo. De cualquier manera, todas las recetas deben discutir en algún momento el matiz de la elección hecha usando este patrón, preferiblemente en la sección de patrones alternativos.
