@@ -11,9 +11,9 @@ Vue.createApp({
       author: {
         name: 'John Doe',
         books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery'
+          'Vue 2 - Guía Avanzada',
+          'Vue 3 - Guía Básica',
+          'Vue 4 - El Misterio'
         ]
       }
     }
@@ -26,7 +26,7 @@ Y queremos mostrar diferentes mensajes dependiendo de si `author` ya tiene o no 
 ```html
 <div id="computed-basics">
   <p>Tiene libros publicados:</p>
-  <span>{{ author.books.length > 0 ? 'Yes' : 'No' }}</span>
+  <span>{{ author.books.length > 0 ? 'Sí' : 'No' }}</span>
 </div>
 ```
 
@@ -50,9 +50,9 @@ Vue.createApp({
       author: {
         name: 'John Doe',
         books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery'
+          'Vue 2 - Guía Avanzada',
+          'Vue 3 - Guía Básica',
+          'Vue 4 - El Misterio'
         ]
       }
     }
@@ -167,7 +167,7 @@ Por ejemplo:
     data() {
       return {
         question: '',
-        answer: 'Questions usually contain a question mark. ;-)'
+        answer: 'Las preguntas usualmente contienen un signo de interrogación. ;-)'
       }
     },
     watch: {
@@ -180,14 +180,14 @@ Por ejemplo:
     },
     methods: {
       getAnswer() {
-        this.answer = 'Thinking...'
+        this.answer = 'Procesando...'
         axios
           .get('https://yesno.wtf/api')
           .then(response => {
             this.answer = response.data.answer
           })
           .catch(error => {
-            this.answer = 'Error! Could not reach the API. ' + error
+            this.answer = '¡Error! No se pudo comunicar con la API. ' + error
           })
       }
     }

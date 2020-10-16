@@ -82,9 +82,9 @@ computed: {
 }
 ```
 
-### Sintaxis de Matriz
+### Sintaxis de Arreglo
 
-Podemos pasar una matriz a `:class` para aplicar una lista de clases:
+Podemos pasar un arreglo a `:class` para aplicar una lista de clases:
 
 ```html
 <div :class="[activeClass, errorClass]"></div>
@@ -220,9 +220,9 @@ data() {
 
 Nuevamente, la sintaxis de objeto es a menudo usada en conjunción con propiedades computadas que retornan objetos.
 
-### Sintaxis de Matriz
+### Sintaxis de Arreglo
 
-La sintaxis de array `:style` permite aplicar múltiples objetos de estilo al mismo elemento:
+La sintaxis de arreglo `:style` permite aplicar múltiples objetos de estilo al mismo elemento:
 
 ```html
 <div :style="[baseStyles, overridingStyles]"></div>
@@ -234,7 +234,7 @@ Cuando utilice una propiedad CSS que requiera [prefijos de proveedores](https://
 
 ### Valores múltiples
 
-Puede proveer una matriz de valores múltiples (de prefijos) a una propiedad de estilo, por ejemplo:
+Puede proveer un arreglo de valores múltiples (de prefijos) a una propiedad de estilo, por ejemplo:
 
 ```html
 <div :style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
