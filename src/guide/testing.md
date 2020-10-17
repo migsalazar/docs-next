@@ -2,7 +2,7 @@
 
 ## Introducción
 
-Cuando se refiere a desarrollar aplicaciones de confianza, las pruebas pueden jugar un papel fundamental en la habilidad un individuo o equipo para desarrollar nuevas características, refactorizar código, mitigar errores, etc. Aunque existen muchas escuelas de pensamiento con las pruebas, hay tres categorías a menudo discutidas en el contexto de aplicaciones web:
+Cuando se trata de desarrollar aplicaciones de confianza, las pruebas pueden desempeñar un papel fundamental en la capacidad de un individuo o de un equipo, para desarrollar nuevas características, refactorizar código, mitigar errores, etc. Aunque existen muchas escuelas de pensamiento con las pruebas, hay tres categorías a menudo discutidas en el contexto de aplicaciones web:
 
 - Pruebas Unitarias
 - Pruebas de Componente
@@ -14,7 +14,7 @@ Esta sección busca proveer una guía para navegar el ecosistema de pruebas y el
 
 ### Introducción
 
-Las pruebas unitarias le permiten probar unidades individuales de código aisladas. El proósito de las pruebas unitarias es garantizar a los desarrolladores la confianza en su código. Escribiendo minuciosamente, pruebas significativas, logra la confianza de que a medida que se crean nuevas funciones o se refactoriza su código, su aplicación seguirá siendo funcional y estable.
+Las pruebas unitarias le permiten probar unidades individuales de código aisladas. El propósito de las pruebas unitarias es garantizar a los desarrolladores la confianza en su código. Escribiendo minuciosamente, pruebas significativas, logra la confianza de que a medida que se crean nuevas funciones o se refactoriza su código, su aplicación seguirá siendo funcional y estable.
 
 Realizar pruebas unitarias en una aplicación Vue no difiere significativamente de probar otro tipo de aplicaciones.
 
@@ -24,13 +24,13 @@ Como el consejo de pruebas unitarias es a menudo agnóstico al marco de trabajo,
 
 #### Reporte de errores de primera-clase
 
-Cuando las pruebas fallan, es crítico que su marco de trabajo de pruebas unitarias provea errores útiles. Este es e trabajo de la librería de aserción. Una aserción con mensajes de error de alta calidad ayuda a minimizar la cantidad de tiempo que toma realizar la depuración del problema. Además de simplemente decirle cuál prueba está fallando, las librerías de aserción proveen contexto de por qué una prueba falla, por ejemplo, cuál es el valor esperado versus el valor recibido.
+Cuando las pruebas fallan, es crítico que su marco de trabajo de pruebas unitarias provea errores útiles. Este es el trabajo de la librería de aserción. Una aserción con mensajes de error de alta calidad ayuda a minimizar la cantidad de tiempo que toma realizar la depuración del problema. Además de simplemente decirle cuál prueba está fallando, las librerías de aserción proveen contexto de por qué una prueba falla, por ejemplo, cuál es el valor esperado versus el valor recibido.
 
 Algunos marcos de trabajo de pruebas unitarias, como Jest, incluyen librerías de aserción. Otros, como Mocha, requieren que instale librerías de aserción por separado (usualmente Chai).
 
 #### Comunidad Activa y equipo
 
-Como la mayoría de los marcos de trabajo de pruebas unitarias son de código abierto, tener una comunidad que es activa puede ser crítico para algunos equipos que mantendrán sus pruebas por un largo período de tiempo y necesitar estar seguros de que un proyecto será mantenido activamente. Además, tener una comunidad activa tiene el beneficio de proveer más soporte cuando ocurra un problema.
+Como la mayoría de los marcos de trabajo de pruebas unitarias son de código abierto, tener una comunidad que es activa puede ser crítico para algunos equipos que mantendrán sus pruebas por un largo período de tiempo y necesitan estar seguros de que un proyecto será mantenido activamente. Además, tener una comunidad activa tiene el beneficio de proveer más soporte cuando ocurra un problema.
 
 ### Marcos de Trabajo
 
@@ -52,7 +52,7 @@ Mocha es un marco de trabajo de pruebas de JavaScript enfocado en ser flexible. 
 **Recursos:**
 
 - [Sitio Web Oficial de Mocha](https://mochajs.org)
-- [Plugin Oficial de Línea de Comandos para Vue 2 - Mocha](https://cli.vuejs.org/core-plugins/unit-mocha.html)
+- [Plugin Oficial de Línea de Comandos - Mocha](https://cli.vuejs.org/core-plugins/unit-mocha.html)
 
 ## Pruebas de Componente
 
