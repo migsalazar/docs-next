@@ -23,8 +23,8 @@ features:
   - title: Performante
     details: |
       20KB min+gzip Runtime<br>
-	  Virtual DOM Increíblemente Rápido<br>
-	  Esfuerzos mínimos de optimización
+      Virtual DOM Increíblemente Rápido<br>
+      Esfuerzos mínimos de optimización
 footer: |
   Liberado bajo la <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">Licencia MIT</a><br>
   Copyright © 2014-2020 Evan You
