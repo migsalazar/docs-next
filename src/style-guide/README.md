@@ -381,7 +381,7 @@ Más allá del atributo `scoped`, el uso de nombres de clase únicos puede ayuda
 
 ### Nombres de propiedades privadas <sup data-p="a">esencial</sup>
 
-**Utilice aclance de módulo para mantener funciones privadas innaccesibles desde el exterior. Si eso no es posible, siempre use el prefijo `$_` para propiedades privadas en un plugin, mixin, etc. que no debe ser considerado parte de la API pública. Luego, para evitar conflictos con código de otros desarrolladores, también incluya un _scope_ (ej. `$_yourPluginName_`).**
+**Utilice alcance de módulo para mantener funciones privadas innaccesibles desde el exterior. Si eso no es posible, siempre use el prefijo `$_` para propiedades privadas en un plugin, mixin, etc. que no debe ser considerado parte de la API pública. Luego, para evitar conflictos con código de otros desarrolladores, también incluya un _scope_ (ej. `$_yourPluginName_`).**
 
 ::: details Explicación Detallada
 Vue utiliza el prefijo `_` para definir sus propias propiedades privadas, entonces, utilizar el mismo prefijo (ej. `_update`) puede causar que una propiedad privada sea sobreescrita. Incluso si usted verifica y Vue no esta haciendo uso de dicho nombre, no hay garantía de que este conflicto no surja en una versión futura.
@@ -516,7 +516,7 @@ components/
 
 **Los nombres de los archivos de los [componentes single-file](/guide/single-file-components.html) deben ser siempre PascalCase o siempre kebab-case.**
 
-El autocompletado de los editores de código funciona mejor cuando se utiliza PascalCase, ya que esta es consistente con la forma en que referenciamos componenten en JS(X) y plantillas, dónde sea posible. Sin embargo, nombres de archivos mixtos pueden crear problemas en sistemas de archivos insensibles a las mayúsculas y minúsculas, es por esto que utilizar kebab-case es perfectamente aceptable.
+El autocompletado de los editores de código funciona mejor cuando se utiliza PascalCase, ya que esta es consistente con la forma en que referenciamos componentes en JS(X) y plantillas, dónde sea posible. Sin embargo, nombres de archivos mixtos pueden crear problemas en sistemas de archivos insensibles a las mayúsculas y minúsculas, es por esto que utilizar kebab-case es perfectamente aceptable.
 
 <div class="style-example style-example-bad">
 <h4>Incorrecto</h4>
@@ -620,11 +620,11 @@ components/
 ```
 </div>
 
-### Nombres de componentes de instancia única <sup data-p="b">altamanete recomendado</sup>
+### Nombres de componentes de instancia única <sup data-p="b">altamente recomendado</sup>
 
 **Componentes que deben tener solamente una única instancia activa deben comenzar con el prefijo `The`, para denotar que solo puede haber una.**
 
-Esto no quiere decir que el componente solamente se utiliza en una única página, sino que solamente será utilizado una vez _por página_. Este tipo de componente nunca aceptan propiedades, dado que son específicas para la aplicación, no del contexto de la misma. Si usted encuentra la necesidad de añadir propiedades, puede ser un buen indicio de que se trata de un componente reusable que solamente se utiliza una vez por página, _por ahora_.
+Esto no quiere decir que el componente solamente se utiliza en una única página, sino que solamente será utilizado una vez _por página_. Este tipo de componentes nunca aceptan propiedades, dado que son específicas para la aplicación, no del contexto de la misma. Si usted encuentra la necesidad de añadir propiedades, puede ser un buen indicio de que se trata de un componente reusable que solamente se utiliza una vez por página, _por ahora_.
 
 <div class="style-example style-example-bad">
 <h4>Incorrecto</h4>
@@ -799,7 +799,7 @@ components/
 
 Los componentes que se cierran automáticamente no solo comunican que no tienen contenido, sino que garantizan que no deben tener contenido. Es la diferencia entre una página en blanco en un libro y una con el texto "Está página fue intencionalmente dejada en blanco". También, su código es más limpio sin la _tag_ de cerrado innecesaria.
 
-Desafortunadamente, HTML no permite que los elementos personalizados se cierren automáticamente - sólo los [official "void" elements](https://www.w3.org/TR/html/syntax.html#void-elements). Es por eso que esta estrategia solo es posible cuando las plantillas Vue son compiladas antes de estar en el DOM, por lo que pueden servir HTML compatible con la especifiación.
+Desafortunadamente, HTML no permite que los elementos personalizados se cierren automáticamente - sólo los [official "void" elements](https://www.w3.org/TR/html/syntax.html#void-elements). Es por eso que esta estrategia solo es posible cuando las plantillas Vue son compiladas antes de estar en el DOM, por lo que pueden servir HTML compatible con la especificación.
 
 <div class="style-example style-example-bad">
 <h4>Incorrecto</h4>
@@ -837,7 +837,7 @@ PascalCase tiene algunas ventajas sobre kebab-case:
 
 - Editores pueden autocompletar nombres de componentes en plantillas, ya que en JavaScript también se utiliza PascalCase.
 - `<MyComponent>` es más distintivo visualmente que un elemento HTML simple que `<my-component>`, porque hay dos caracteres distintos (las dos mayúsculas), en lugar de solo uno (el guión).
-- Si usted utiliza cualquier elemento no Vue en sus plantillas, como un componente web, PascalCase asegura que sus componente Vue se mantendrán distinguibles visualmente.
+- Si usted utiliza cualquier elemento no Vue en sus plantillas, como un componente web, PascalCase asegura que sus componentes Vue se mantendrán distinguibles visualmente.
 
 Desafortunadamente, como HTML es insensible a las mayúsculas y minúsculas, plantillas del DOM deben utilizar kebab-case.
 
@@ -890,7 +890,7 @@ o
 ::: details Explicación Detallada
 En JavaScript, PascalCase es la convención para clases y constructores - esencialmente, cualquier cosa que pueda tener instancias diferentes. Los componentes de Vue también tienen instancias, así que tiene sentido utilizar PascalCase. Como un beneficio agregado, utilizar PascalCase en JSX (y plantillas) nos permite distinguir de una manera más fácil entre componentes y elementos HTML.
 
-Sin embargo, para aplicaciones que **solo** utilizen definiciones globales vía `Vue.component`, nosotros recomendamos utilizar kebab-case. Las razones son las siguientes:
+Sin embargo, para aplicaciones que **solo** utilicen definiciones globales vía `Vue.component`, nosotros recomendamos utilizar kebab-case. Las razones son las siguientes:
 
 - Es raro que los componentes globales sean referenciados en JavaScript, entonces adoptar una convención para Javascript no tiene sentido.
 - Estas aplicaciones siempre incluyen muchas plantillas del DOM donde [kebab-case **debe** ser utilizada](#Notacion-de-nombres-de-componentes-en-templates-altamente-recomendado).
@@ -955,7 +955,7 @@ export default {
 
 **Nombres de componentes deben tener palabras completas, en vez de abreviaciones.**
 
-El autocompletado automático en los editores hace que el costo de escribir nombres largos muy bajo, mientras que la claridad que estos proveen es invaluable. En particular, las abreviaciones poco comunes debe ser evitadas.
+El autocompletado automático en los editores hace que el costo de escribir nombres largos sea muy bajo, mientras que la claridad que estos proveen es invaluable. En particular, las abreviaciones poco comunes debe ser evitadas.
 
 <div class="style-example style-example-bad">
 <h4>Incorrecto</h4>
@@ -1105,7 +1105,7 @@ Las propiedades computadas simples y bien nombradas son:
 
   Cualquier valor que pueda ser nombrado puede ser útil para la vista. Por ejemplo, podemos decidir mostrar un mensaje al usuario diciendo cuanto dinero ahorró. Podemos también decidir calcular los impuestos sobre las ventas, pero quizás mostrar estos valores separados y no como parte del precio final.
 
-  Las propiedades computadas son pequeñas y enfocadas hacen menos suposiciones sobre como se utilizará la información, por lo que requieren una menor refactorización a medida que cambian los requerimientos.
+  Las propiedades computadas que son pequeñas y enfocadas, hacen menos suposiciones sobre como se utilizará la información, por lo que requieren una menor refactorización a medida que cambian los requerimientos.
 :::
 
 <div class="style-example style-example-bad">
@@ -1197,7 +1197,7 @@ Si bien los valores de atributos sin espacios no requiren comillas en HTML, esta
 
 ``` html
 <template v-slot:header>
-  <h1>Aquí podría ir el titulo de la página</h1>
+  <h1>Aquí podría ir el título de la página</h1>
 </template>
 
 <template #footer>
@@ -1239,7 +1239,7 @@ Si bien los valores de atributos sin espacios no requiren comillas en HTML, esta
 
 ``` html
 <template v-slot:header>
-  <h1>Aquí podría ir el titulo de la página</h1>
+  <h1>Aquí podría ir el título de la página</h1>
 </template>
 
 <template v-slot:footer>
@@ -1249,7 +1249,7 @@ Si bien los valores de atributos sin espacios no requiren comillas en HTML, esta
 
 ``` html
 <template #header>
-  <h1>Aquí podría ir el titulo de la página</h1>
+  <h1>Aquí podría ir el título de la página</h1>
 </template>
 
 <template #footer>
@@ -1329,7 +1329,7 @@ Este es el orden que recomendamos para las opciones de los componentes. Estas es
 2. **Renderización de Listas** (crea múltiples variaciones del mismo elemento)
   - `v-for`
 
-3. **Condicionales** (sí el elemento es renderizado/mostrado)
+3. **Condicionales** (si el elemento es renderizado/mostrado)
   - `v-if`
   - `v-else-if`
   - `v-else`
@@ -1525,7 +1525,7 @@ button {
 
 **Se debe preferir el uso de _props_ y eventos para la comunicación entre componentes padre-hijo, en lugar de `this.$parent` o mutación de _props_.**
 
-Una aplicación Vue ideal es usada con _props_ para abajo y eventos para arriba. Apegarse a esta convención hace que sus componentes sean más fáciles de entender. Sin embargo, hay casos border donde la mutación de _props_ o el uso de `this.$parent` puede simplificar dos componentes que están fuertemente acopladas.
+Una aplicación Vue ideal es usada con _props_ para abajo y eventos para arriba. Apegarse a esta convención hace que sus componentes sean más fáciles de entender. Sin embargo, hay casos border donde la mutación de _props_ o el uso de `this.$parent` puede simplificar dos componentes que están fuertemente acoplados.
 
 El problema es que también existen muchos casos _simples_ donde estos patrones pueden ofrecer conveniencia. Cuidado: no se deje seducir por la conveniencia a corto plazo (escribir menos código) sobre la simpicidad (poder entender el flujo de su estado).
 
@@ -1620,7 +1620,7 @@ app.component('TodoItem', {
 
 Manejar el estado en `this.$root` y/o utilizado un _event bus_ global puede ser conveniente para casos simples, pero no son apropiados para la mayoría de las aplicaciones. Vuex no solo ofrece un lugar central para manejar el estado, sino que también ofrece herramiento para organizar, rastrear y depurar cambios de estado.
 
-Vuex es la [implementación _flux-like_ oficial](/guide/state-management.html#official-flux-like-implementation) para Vue, y ofrece no solo una forma central de maneja de estado, sino también herramientas para organizar, observar y depurar cambios en el estado. Se integrado de buena forma al ecosistema de Vue (incluyendo total soporte en [Vue DevTools](/guide/installation.html#vue-devtools)).
+Vuex es la [implementación _flux-like_ oficial](/guide/state-management.html#official-flux-like-implementation) para Vue, y ofrece no solo una forma central de maneja de estado, sino también herramientas para organizar, observar y depurar cambios en el estado. Se ha integrado de buena forma al ecosistema de Vue (incluyendo total soporte en [Vue DevTools](/guide/installation.html#vue-devtools)).
 
 <div class="style-example style-example-bad">
 <h4>Incorrecto</h4>
