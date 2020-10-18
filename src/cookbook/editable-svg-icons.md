@@ -6,7 +6,7 @@ Existen muchas maneras de crear un sistema de íconos SVG, pero un método que a
 
 - Son fáciles de editar en tiempo real
 - Son animables
-- Puede usar _props_ y valores _default_, para mantener un tamaño común o moficarlo si es necesario
+- Puede usar _props_ y valores por defecto, para mantener un tamaño común o moficarlo si es necesario
 - Son _inline_, por lo que no se necesitan llamadas HTTP
 - Pueden volverse accesibles dinámicamente
 
@@ -40,7 +40,7 @@ Crearemos un componente base para el ícono (`IconBase.vue`) que use un slot:
 </template>
 ```
 
-Puede usar este ícono base tal como está, lo único que podría tener que cambiar es el `viewBox` dependiendo del `viewBox` de sus íconos. En la base, estamos creando como _props_ a `width`, `height`, `iconColor`, y al nombre del ícono, de tal manera que puedan ser actualizadas dinámicamente. El nombre será usado para el contenido de `<title>` y de su `id` para accesibilidad.
+Puede usar este ícono base tal como está, lo único que podría tener que cambiar es el `viewBox` dependiendo del `viewBox` de sus íconos. En la base, estamos definiendo como _props_ a `width`, `height`, `iconColor` y al nombre del ícono, de tal manera que puedan ser actualizadas dinámicamente. El nombre será usado para el contenido de `<title>` y de su `id` para accesibilidad.
 
 Nuestro _script_ se verá de la siguiente manera, tendremos algunos valores por defecto para que nuestro ícono sea renderizado de manera consistente, a menos de que lo definamos de otra forma:
 
@@ -67,7 +67,7 @@ export default {
 }
 ```
 
-La propiedad `currentColor`, que es el valor por defecto en el _fill_, hará que el ícono herede el color de el texto que lo rodea. También podríamos pasar un color diferente como _prop_ si así lo deseamos.
+La propiedad `currentColor`, que es el valor por defecto en el _fill_, hará que el ícono herede el color del texto que lo rodea. También podríamos pasar un color diferente como _prop_ si así lo deseamos.
 
 Lo podemos usar de la siguiente manera, teniendo como único contenido de `IconWrite.vue` los _paths_ dentro del ícono:
 
@@ -81,7 +81,7 @@ Ahora, si quisieramos tener varios tamaños para el ícono, podríamos hacerlo f
 <p>
   <!-- puede pasar valores más pequeños para `width` y `height` como props -->
   <icon-base width="12" height="12" icon-name="write"><icon-write /></icon-base>
-  <!-- o puede usar el valor default, el cual es 18 -->
+  <!-- o puede usar el valor por defecto, el cual es 18 -->
   <icon-base icon-name="write"><icon-write /></icon-base>
   <!-- o hacerlo un poco más grante :) -->
   <icon-base width="30" height="30" icon-name="write"><icon-write /></icon-base>
