@@ -2,7 +2,7 @@
 
 ## Propiedades de Data
 
-La opción `data` de un componente es una función. Vue llama a esta función como parte del proceso de construcción de una nueva instancia de un componente. Esta función debería devolver un objeto, que Vue envolverá en su sistema de reactividad y lo almacenará en la instancia del componente como `$data`. Por conveniencia, cualquier propiedad en _top-level_ de ese objeto, también se expone directamente a través de la instancia del componente:
+La opción `data` de un componente es una función. Vue llama a esta función como parte del proceso de construcción de una nueva instancia de un componente. Esta función debería devolver un objeto que Vue envolverá en su sistema de reactividad y almacenará en la instancia del componente como `$data`. Por conveniencia, cualquier propiedad en _top-level_ de ese objeto, también se expone directamente a través de la instancia del componente:
 
 ```js
 const app = Vue.createApp({
@@ -65,7 +65,7 @@ Al igual que todas las demás propiedades de la instancia del componente, los m�
 <button @click="increment">Voto a favor</button>
 ```
 
-En el ejemplo anterior, el método `increment` se llamará cuando se hace clic en `<button>`.
+En el ejemplo anterior, el método `increment` se llamará cuando se hace click en `<button>`.
 
 También es posible llamar a un método directamente desde un _template_. Como veremos en breve, generalmente es mejor usar una [propiedad computada](computed.html) en su lugar. Sin embargo, el uso de un método puede resultar útil en situaciones en las que las propiedades computadas no sean una opción viable. Puede llamar a un método en cualquier lugar donde un _template_ admita expresiones de JavaScript:
 
@@ -77,7 +77,7 @@ También es posible llamar a un método directamente desde un _template_. Como v
 
 Si los métodos `toTitleDate` o` formatDate` acceden a cualquier dato reactivo, entonces se tomará como una dependencia de renderización, tal cual como si se hubiera utilizado directamente en el _template_.
 
-Los métodos llamados desde un _template_ no deberían tener efectos secundarios, como cambiar datos o desencadenar procesos asíncronos. Si se siente tentado a hacer esto, probablemente debería usar un [lifecycle hook](instance.html#lifecycle-hooks).
+Los métodos llamados desde un _template_ no deberían tener efectos secundarios, como cambiar datos o desencadenar procesos asíncronos. Si se siente tentado a hacer esto, probablemente debería usar un [_hook_ del ciclo de vida](instance.html#lifecycle-hooks).
 
 ### Debouncing y Throttling
 
@@ -92,7 +92,7 @@ En los casos donde un componente solo se utiliza una vez, _debouncing_ se puede 
     methods: {
       // Debouncing con Lodash
       click: _.debounce(function() {
-        // ... responde al clic ...
+        // ... responde al click ...
       }, 500)
     }
   }).mount('#app')
@@ -113,7 +113,7 @@ app.component('save-button', {
   },
   methods: {
     click() {
-      // ... responde al clic ...
+      // ... responde al click ...
     }
   },
   template: `
