@@ -1,15 +1,15 @@
-# Event Handling
+# Manejo de eventos
 
-## Listening to Events
+## Escuchar Eventos
 
-We can use the `v-on` directive, which we typically shorten to the `@` symbol, to listen to DOM events and run some JavaScript when they're triggered. The usage would be `v-on:click="methodName"` or with the shortcut, `@click="methodName"`
+Podemos usar la directiva `v-on`, que normalmente acortamos con el símbolo `@`, para escuchar eventos del DOM y ejecutar algo de Javascript cuando son activados. El uso sería `v-on:click="methodName"` o con la forma corta, `@click="methodName"`.
 
-For example:
+Por ejemplo:
 
 ```html
 <div id="basic-event">
-  <button @click="counter += 1">Add 1</button>
-  <p>The button above has been clicked {{ counter }} times.</p>
+  <button @click="counter += 1">Agregar 1</button>
+  <p>Se ha hecho click {{ counter }} veces en el botón de arriba.</p>
 </div>
 ```
 
@@ -23,7 +23,7 @@ Vue.createApp({
 }).mount('#basic-event')
 ```
 
-Result:
+Resultado:
 
 <p class="codepen" data-height="300" data-theme-id="39028" data-default-tab="html,result" data-user="Vue" data-slug-hash="xxGadPZ" data-editable="true" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Event handling: basic">
   <span>See the Pen <a href="https://codepen.io/team/Vue/pen/xxGadPZ">
@@ -32,16 +32,16 @@ Result:
 </p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
-## Method Event Handlers
+## Métodos de manejo de eventos
 
-The logic for many event handlers will be more complex though, so keeping your JavaScript in the value of the `v-on` attribute isn't feasible. That's why `v-on` can also accept the name of a method you'd like to call.
+Sin embargo, la mayoría de las veces la lógica para el manejo de eventos será más compleja, por lo que mantener el JavaScript en el valor del atributo `v-on` no es factible. Es por eso que `v-on` también puede aceptar el nombre del método que se necesite llamar.`
 
-For example:
+Por ejemplo:
 
 ```html
 <div id="event-with-method">
-  <!-- `greet` is the name of a method defined below -->
-  <button @click="greet">Greet</button>
+  <!-- `greet` es el nombre del método definido a continuación -->
+  <button @click="greet">Saludar</button>
 </div>
 ```
 
@@ -54,9 +54,9 @@ Vue.createApp({
   },
   methods: {
     greet(event) {
-      // `this` inside methods points to the current active instance
+      // `this` dentro de los métodos apunta a la instancia activa actual
       alert('Hello ' + this.name + '!')
-      // `event` is the native DOM event
+      // `event` es el evento nativo del DOM
       if (event) {
         alert(event.target.tagName)
       }
@@ -65,7 +65,7 @@ Vue.createApp({
 }).mount('#event-with-method')
 ```
 
-Result:
+Resultado:
 
 <p class="codepen" data-height="300" data-theme-id="39028" data-default-tab="js,result" data-user="Vue" data-slug-hash="jOPvmaX" data-editable="true" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Event handling: with a method">
   <span>See the Pen <a href="https://codepen.io/team/Vue/pen/jOPvmaX">
